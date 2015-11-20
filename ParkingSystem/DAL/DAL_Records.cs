@@ -31,30 +31,32 @@ namespace ParkingSystem.DAL
             if (datatable.Rows.Count > 0)
             {
                 DataRow row = datatable.Rows[0];
-                if (row["outtime"].ToString()!=null)
+                if (row["outtime"] is DBNull)
                 {
-                     record = new Model_Records (
-                   Convert.ToInt32(row["id"].ToString()),
-                   row["name"].ToString(),
-                   row["carnumbers"].ToString(),               
-                   row["contactway"].ToString(),
-                   Convert.ToInt32(row["placeid"].ToString()),
-                   Convert.ToDateTime(row["entertime"]),
-                   Convert.ToDateTime(row["outtime"]),
-                   Convert.ToDouble(row["money"])
-                   );
+                    record = new Model_Records(
+              Convert.ToInt32(row["id"].ToString()),
+              row["name"].ToString(),
+              row["carnumbers"].ToString(),
+              row["contactway"].ToString(),
+              Convert.ToInt32(row["placeid"].ToString()),
+              Convert.ToDateTime(row["entertime"])
+              );
                 }
                 else
                 {
                     record = new Model_Records(
-                Convert.ToInt32(row["id"].ToString()),
-                row["name"].ToString(),
-                row["carnumbers"].ToString(),
-                row["contactway"].ToString(),
-                Convert.ToInt32(row["placeid"].ToString()),
-                Convert.ToDateTime(row["entertime"])
-                );
-                }                
+                 Convert.ToInt32(row["id"].ToString()),
+                 row["name"].ToString(),
+                 row["carnumbers"].ToString(),
+                 row["contactway"].ToString(),
+                 Convert.ToInt32(row["placeid"].ToString()),
+                 Convert.ToDateTime(row["entertime"]),
+                 Convert.ToDateTime(row["outtime"]),
+                 Convert.ToDouble(row["money"])
+                 );
+
+
+                }  
             }
             else
             {
@@ -72,16 +74,32 @@ namespace ParkingSystem.DAL
             if (datatable.Rows.Count > 0)
             {
                 DataRow row = datatable.Rows[0];
-                record = new Model_Records(
-                   Convert.ToInt32(row["id"].ToString()),
-                   row["name"].ToString(),
-                   row["carnumbers"].ToString(),
-                   row["contactway"].ToString(),
-                   Convert.ToInt32(row["placeid"].ToString()),
-                   Convert.ToDateTime(row["entertime"]),
-                   Convert.ToDateTime(row["outtime"]),
-                   Convert.ToDouble(row["money"])
-                   );
+                if (row["outtime"] is DBNull)
+                {
+                      record = new Model_Records(
+                Convert.ToInt32(row["id"].ToString()),
+                row["name"].ToString(),
+                row["carnumbers"].ToString(),
+                row["contactway"].ToString(),
+                Convert.ToInt32(row["placeid"].ToString()),
+                Convert.ToDateTime(row["entertime"])
+                );
+                }
+                else
+                {
+                    record = new Model_Records(
+                 Convert.ToInt32(row["id"].ToString()),
+                 row["name"].ToString(),
+                 row["carnumbers"].ToString(),
+                 row["contactway"].ToString(),
+                 Convert.ToInt32(row["placeid"].ToString()),
+                 Convert.ToDateTime(row["entertime"]),
+                 Convert.ToDateTime(row["outtime"]),
+                 Convert.ToDouble(row["money"])
+                 );
+
+                 
+                }                
             }
             else
             {
@@ -100,16 +118,32 @@ namespace ParkingSystem.DAL
             if (datatable.Rows.Count > 0)
             {
                 DataRow row = datatable.Rows[0];
-                record = new Model_Records(
-                   Convert.ToInt32(row["id"].ToString()),
-                   row["name"].ToString(),
-                   row["carnumbers"].ToString(),
-                   row["contactway"].ToString(),
-                   Convert.ToInt32(row["placeid"].ToString()),
-                   Convert.ToDateTime(row["entertime"]),
-                   Convert.ToDateTime(row["outtime"]),
-                   Convert.ToDouble(row["money"])
-                   );
+                if (row["outtime"] is DBNull)
+                {
+                    record = new Model_Records(
+              Convert.ToInt32(row["id"].ToString()),
+              row["name"].ToString(),
+              row["carnumbers"].ToString(),
+              row["contactway"].ToString(),
+              Convert.ToInt32(row["placeid"].ToString()),
+              Convert.ToDateTime(row["entertime"])
+              );
+                }
+                else
+                {
+                    record = new Model_Records(
+                 Convert.ToInt32(row["id"].ToString()),
+                 row["name"].ToString(),
+                 row["carnumbers"].ToString(),
+                 row["contactway"].ToString(),
+                 Convert.ToInt32(row["placeid"].ToString()),
+                 Convert.ToDateTime(row["entertime"]),
+                 Convert.ToDateTime(row["outtime"]),
+                 Convert.ToDouble(row["money"])
+                 );
+
+
+                }  
             }
             else
             {

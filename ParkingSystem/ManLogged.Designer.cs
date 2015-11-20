@@ -47,6 +47,16 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.Button_Check_AllRecords = new System.Windows.Forms.Button();
             this.dataGridView_records = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carnumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mastername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactway = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Entertime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leavetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allstaytime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox_records = new System.Windows.Forms.ComboBox();
@@ -91,21 +101,11 @@
             this.SAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carnumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mastername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactway = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Entertime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leavetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allstaytime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -346,6 +346,67 @@
             this.dataGridView_records.RowTemplate.Height = 23;
             this.dataGridView_records.Size = new System.Drawing.Size(718, 339);
             this.dataGridView_records.TabIndex = 19;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "流水号";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 80;
+            // 
+            // status
+            // 
+            this.status.HeaderText = "当前状态";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // carnumbers
+            // 
+            this.carnumbers.HeaderText = "车牌号";
+            this.carnumbers.Name = "carnumbers";
+            this.carnumbers.ReadOnly = true;
+            // 
+            // placeid
+            // 
+            this.placeid.HeaderText = "车位号";
+            this.placeid.Name = "placeid";
+            this.placeid.ReadOnly = true;
+            // 
+            // mastername
+            // 
+            this.mastername.HeaderText = "车主姓名";
+            this.mastername.Name = "mastername";
+            this.mastername.ReadOnly = true;
+            // 
+            // contactway
+            // 
+            this.contactway.HeaderText = "联系电话";
+            this.contactway.Name = "contactway";
+            this.contactway.ReadOnly = true;
+            // 
+            // Entertime
+            // 
+            this.Entertime.HeaderText = "进入时间";
+            this.Entertime.Name = "Entertime";
+            this.Entertime.ReadOnly = true;
+            // 
+            // leavetime
+            // 
+            this.leavetime.HeaderText = "离开时间";
+            this.leavetime.Name = "leavetime";
+            this.leavetime.ReadOnly = true;
+            // 
+            // allstaytime
+            // 
+            this.allstaytime.HeaderText = "停车总时长";
+            this.allstaytime.Name = "allstaytime";
+            this.allstaytime.ReadOnly = true;
+            // 
+            // money
+            // 
+            this.money.HeaderText = "实收费用";
+            this.money.Name = "money";
+            this.money.ReadOnly = true;
             // 
             // label6
             // 
@@ -774,6 +835,36 @@
             this.tabPage1.Text = "当前状态";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(498, 157);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 12);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "剩余空位";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(496, 117);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 12);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "当前状态";
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(568, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "刷新";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -812,94 +903,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(729, 493);
             this.tabControl1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(568, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "刷新";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(496, 117);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 12);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "当前状态";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(498, 157);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(53, 12);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "剩余空位";
-            // 
-            // id
-            // 
-            this.id.HeaderText = "流水号";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 80;
-            // 
-            // status
-            // 
-            this.status.HeaderText = "当前状态";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
-            // carnumbers
-            // 
-            this.carnumbers.HeaderText = "车牌号";
-            this.carnumbers.Name = "carnumbers";
-            this.carnumbers.ReadOnly = true;
-            // 
-            // placeid
-            // 
-            this.placeid.HeaderText = "车位号";
-            this.placeid.Name = "placeid";
-            this.placeid.ReadOnly = true;
-            // 
-            // mastername
-            // 
-            this.mastername.HeaderText = "车主姓名";
-            this.mastername.Name = "mastername";
-            this.mastername.ReadOnly = true;
-            // 
-            // contactway
-            // 
-            this.contactway.HeaderText = "联系电话";
-            this.contactway.Name = "contactway";
-            this.contactway.ReadOnly = true;
-            // 
-            // Entertime
-            // 
-            this.Entertime.HeaderText = "进入时间";
-            this.Entertime.Name = "Entertime";
-            this.Entertime.ReadOnly = true;
-            // 
-            // leavetime
-            // 
-            this.leavetime.HeaderText = "离开时间";
-            this.leavetime.Name = "leavetime";
-            this.leavetime.ReadOnly = true;
-            // 
-            // allstaytime
-            // 
-            this.allstaytime.HeaderText = "停车总时长";
-            this.allstaytime.Name = "allstaytime";
-            this.allstaytime.ReadOnly = true;
-            // 
-            // money
-            // 
-            this.money.HeaderText = "实收费用";
-            this.money.Name = "money";
-            this.money.ReadOnly = true;
             // 
             // ManLogged
             // 

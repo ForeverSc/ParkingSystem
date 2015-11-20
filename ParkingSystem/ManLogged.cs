@@ -228,6 +228,7 @@ namespace ParkingSystem
                 int index = this.dataGridView_records.Rows.Add();
                 this.dataGridView_records.Rows[index].Cells["id"].Value = rows[i]["id"];
                 this.dataGridView_records.Rows[index].Cells["mastername"].Value = rows[i]["name"];
+                this.dataGridView_records.Rows[index].Cells["carnumbers"].Value = rows[i]["carnumbers"];
                 this.dataGridView_records.Rows[index].Cells["contactway"].Value = rows[i]["contactway"];
                 this.dataGridView_records.Rows[index].Cells["placeid"].Value = rows[i]["placeid"];
                 this.dataGridView_records.Rows[index].Cells["Entertime"].Value = rows[i]["entertime"];
