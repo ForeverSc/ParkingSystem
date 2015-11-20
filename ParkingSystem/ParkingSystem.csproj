@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{E0E85448-AD87-4EC0-B8B6-0ADFD8921E1A}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ParkingSystem</RootNamespace>
+    <AssemblyName>ParkingSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BLL_Administrator.cs" />
+    <Compile Include="BLL\BLL_FreedomCars.cs" />
+    <Compile Include="BLL\BLL_Records.cs" />
+    <Compile Include="BLL\BLL_StaticCars.cs" />
+    <Compile Include="DAL\DAL_Administrator.cs" />
+    <Compile Include="DAL\DAL_FreedomCars.cs" />
+    <Compile Include="DAL\DAL_Records.cs" />
+    <Compile Include="DAL\DAL_StaticCars.cs" />
+    <Compile Include="FreedomCarEnter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FreedomCarEnter.Designer.cs">
+      <DependentUpon>FreedomCarEnter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FreedomCarLeave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FreedomCarLeave.Designer.cs">
+      <DependentUpon>FreedomCarLeave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManLogged.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManLogged.Designer.cs">
+      <DependentUpon>ManLogged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model_Administrator.cs" />
+    <Compile Include="Model\Model_FreedomCars.cs" />
+    <Compile Include="Model\Model_Master.cs" />
+    <Compile Include="Model\Model_Records.cs" />
+    <Compile Include="Model\Model_StaticCars.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FreedomCarEnter.resx">
+      <DependentUpon>FreedomCarEnter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreedomCarLeave.resx">
+      <DependentUpon>FreedomCarLeave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManLogged.resx">
+      <DependentUpon>ManLogged.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Parking_DB\Parking_DB.csproj">
+      <Project>{E864BC22-99B7-48E1-A289-BCF5F7F56DEA}</Project>
+      <Name>Parking_DB</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

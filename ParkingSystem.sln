@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.3
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingSystem", "ParkingSystem\ParkingSystem.csproj", "{E0E85448-AD87-4EC0-B8B6-0ADFD8921E1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parking_DB", "Parking_DB\Parking_DB.csproj", "{E864BC22-99B7-48E1-A289-BCF5F7F56DEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0E85448-AD87-4EC0-B8B6-0ADFD8921E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0E85448-AD87-4EC0-B8B6-0ADFD8921E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0E85448-AD87-4EC0-B8B6-0ADFD8921E1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0E85448-AD87-4EC0-B8B6-0ADFD8921E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E864BC22-99B7-48E1-A289-BCF5F7F56DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E864BC22-99B7-48E1-A289-BCF5F7F56DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E864BC22-99B7-48E1-A289-BCF5F7F56DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E864BC22-99B7-48E1-A289-BCF5F7F56DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal
