@@ -49,12 +49,18 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Button_NextStep = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox_hoursmoney = new System.Windows.Forms.TextBox();
+            this.label = new System.Windows.Forms.Label();
+            this.label_hoursmoney = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.costlist.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label);
+            this.groupBox1.Controls.Add(this.textBox_hoursmoney);
             this.groupBox1.Controls.Add(this.textBox_contactway);
             this.groupBox1.Controls.Add(this.textBox_mastername);
             this.groupBox1.Controls.Add(this.textBox_carnumbers);
@@ -157,6 +163,8 @@
             // 
             // costlist
             // 
+            this.costlist.Controls.Add(this.label_hoursmoney);
+            this.costlist.Controls.Add(this.label11);
             this.costlist.Controls.Add(this.label_moneycost);
             this.costlist.Controls.Add(this.label_timecost);
             this.costlist.Controls.Add(this.label_leavetime);
@@ -176,7 +184,7 @@
             // label_moneycost
             // 
             this.label_moneycost.AutoSize = true;
-            this.label_moneycost.Location = new System.Drawing.Point(115, 186);
+            this.label_moneycost.Location = new System.Drawing.Point(113, 223);
             this.label_moneycost.Name = "label_moneycost";
             this.label_moneycost.Size = new System.Drawing.Size(47, 12);
             this.label_moneycost.TabIndex = 7;
@@ -212,11 +220,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 186);
+            this.label8.Location = new System.Drawing.Point(27, 223);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 12);
+            this.label8.Size = new System.Drawing.Size(77, 12);
             this.label8.TabIndex = 3;
-            this.label8.Text = "收费金额：";
+            this.label8.Text = "总收费金额：";
             // 
             // label7
             // 
@@ -254,6 +262,40 @@
             this.Button_NextStep.Text = "下一步";
             this.Button_NextStep.UseVisualStyleBackColor = true;
             this.Button_NextStep.Click += new System.EventHandler(this.Button_NextStep_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(29, 188);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 12);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "收费/小时：";
+            // 
+            // textBox_hoursmoney
+            // 
+            this.textBox_hoursmoney.Location = new System.Drawing.Point(129, 242);
+            this.textBox_hoursmoney.Name = "textBox_hoursmoney";
+            this.textBox_hoursmoney.Size = new System.Drawing.Size(100, 21);
+            this.textBox_hoursmoney.TabIndex = 9;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(17, 245);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(101, 12);
+            this.label.TabIndex = 10;
+            this.label.Text = "每小时收费金额：";
+            // 
+            // label_hoursmoney
+            // 
+            this.label_hoursmoney.AutoSize = true;
+            this.label_hoursmoney.Location = new System.Drawing.Point(108, 188);
+            this.label_hoursmoney.Name = "label_hoursmoney";
+            this.label_hoursmoney.Size = new System.Drawing.Size(41, 12);
+            this.label_hoursmoney.TabIndex = 9;
+            this.label_hoursmoney.Text = "label9";
             // 
             // FreedomCarLeave
             // 
@@ -298,5 +340,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Button_NextStep;
+        private System.Windows.Forms.TextBox textBox_hoursmoney;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label label_hoursmoney;
     }
 }

@@ -76,11 +76,6 @@
             this.Button_Freecar_Leave = new System.Windows.Forms.Button();
             this.Button_Freecar_Enter = new System.Windows.Forms.Button();
             this.dataGridView_freecars = new System.Windows.Forms.DataGridView();
-            this.freecarnumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freeplaceid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freemastername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freetel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freeentertime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -106,6 +101,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.freecarnumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freeplaceid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freemastername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freetel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freeentertime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timestay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -324,9 +325,6 @@
             // 
             this.dataGridView_records.AllowUserToAddRows = false;
             this.dataGridView_records.AllowUserToDeleteRows = false;
-            this.dataGridView_records.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_records.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView_records.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_records.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -603,44 +601,16 @@
             this.freeplaceid,
             this.freemastername,
             this.freetel,
-            this.freeentertime});
+            this.freeentertime,
+            this.timestay});
             this.dataGridView_freecars.Location = new System.Drawing.Point(0, 129);
             this.dataGridView_freecars.Name = "dataGridView_freecars";
             this.dataGridView_freecars.ReadOnly = true;
             this.dataGridView_freecars.RowTemplate.Height = 23;
+            this.dataGridView_freecars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_freecars.Size = new System.Drawing.Size(718, 338);
             this.dataGridView_freecars.TabIndex = 5;
-            // 
-            // freecarnumbers
-            // 
-            this.freecarnumbers.HeaderText = "车牌号";
-            this.freecarnumbers.Name = "freecarnumbers";
-            this.freecarnumbers.ReadOnly = true;
-            // 
-            // freeplaceid
-            // 
-            this.freeplaceid.HeaderText = "车位号";
-            this.freeplaceid.Name = "freeplaceid";
-            this.freeplaceid.ReadOnly = true;
-            // 
-            // freemastername
-            // 
-            this.freemastername.HeaderText = "车主姓名";
-            this.freemastername.Name = "freemastername";
-            this.freemastername.ReadOnly = true;
-            this.freemastername.Width = 80;
-            // 
-            // freetel
-            // 
-            this.freetel.HeaderText = "联系电话";
-            this.freetel.Name = "freetel";
-            this.freetel.ReadOnly = true;
-            // 
-            // freeentertime
-            // 
-            this.freeentertime.HeaderText = "进入时间";
-            this.freeentertime.Name = "freeentertime";
-            this.freeentertime.ReadOnly = true;
+            this.dataGridView_freecars.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabPage2
             // 
@@ -904,6 +874,43 @@
             this.tabControl1.Size = new System.Drawing.Size(729, 493);
             this.tabControl1.TabIndex = 0;
             // 
+            // freecarnumbers
+            // 
+            this.freecarnumbers.HeaderText = "车牌号";
+            this.freecarnumbers.Name = "freecarnumbers";
+            this.freecarnumbers.ReadOnly = true;
+            // 
+            // freeplaceid
+            // 
+            this.freeplaceid.HeaderText = "车位号";
+            this.freeplaceid.Name = "freeplaceid";
+            this.freeplaceid.ReadOnly = true;
+            // 
+            // freemastername
+            // 
+            this.freemastername.HeaderText = "车主姓名";
+            this.freemastername.Name = "freemastername";
+            this.freemastername.ReadOnly = true;
+            this.freemastername.Width = 80;
+            // 
+            // freetel
+            // 
+            this.freetel.HeaderText = "联系电话";
+            this.freetel.Name = "freetel";
+            this.freetel.ReadOnly = true;
+            // 
+            // freeentertime
+            // 
+            this.freeentertime.HeaderText = "进入时间";
+            this.freeentertime.Name = "freeentertime";
+            this.freeentertime.ReadOnly = true;
+            // 
+            // timestay
+            // 
+            this.timestay.HeaderText = "已停放时间";
+            this.timestay.Name = "timestay";
+            this.timestay.ReadOnly = true;
+            // 
             // ManLogged
             // 
             this.ClientSize = new System.Drawing.Size(730, 495);
@@ -996,11 +1003,6 @@
         private System.Windows.Forms.TextBox text_admin_password2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button Button_checkall_freecars;
-        private System.Windows.Forms.DataGridViewTextBoxColumn freecarnumbers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn freeplaceid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn freemastername;
-        private System.Windows.Forms.DataGridViewTextBoxColumn freetel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn freeentertime;
         private System.Windows.Forms.Button Button_Check_AllRecords;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -1015,6 +1017,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn leavetime;
         private System.Windows.Forms.DataGridViewTextBoxColumn allstaytime;
         private System.Windows.Forms.DataGridViewTextBoxColumn money;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freecarnumbers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freeplaceid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freemastername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freetel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freeentertime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timestay;
 
 
 

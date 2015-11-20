@@ -46,6 +46,7 @@ namespace ParkingSystem.Model
             this.placeid = placeid;
             this.contactway = contactway;
             this.entertime = entertime;
+            this.outertime = Convert.ToDateTime("00:00:00");
          
         }
 
@@ -71,13 +72,13 @@ namespace ParkingSystem.Model
         public void SetMoney(double hoursmoney)
         {
             TimeSpan timespan = outertime - entertime;
-            this.money = ((timespan.Days * 24 + timespan.Hours + timespan.Minutes / 60) * money);
+            this.money = ((timespan.Days * 24 + timespan.Hours + timespan.Minutes / 60) * hoursmoney);
         }
 
         public string ReturnAllStayTime()
         {
             TimeSpan timespan =outertime-entertime;
-            return timespan.ToString();
+            return string.Format("{0}天{1}小时{2}分钟", timespan.Days, timespan.Hours, timespan.Minutes);
         }
         public string ReturnMoney()
         {
@@ -119,7 +120,15 @@ namespace ParkingSystem.Model
 		}
 		public string ReturnOutertime()
 		{
-			return outertime.ToString();
+            if (outertime==Convert.ToDateTime("00:00:00"))
+            {
+                return "";
+            }
+            else
+            {
+                return outertime.ToString();
+            }
+			
 		}
 	
 		public int ReturnPlaceid()

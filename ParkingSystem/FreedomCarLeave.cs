@@ -20,6 +20,18 @@ namespace ParkingSystem
         public FreedomCarLeave()
         {
             InitializeComponent();
+            if (FreedomCarInformation.fwindow.f_carnumbers!=null
+              && FreedomCarInformation.fwindow.f_contactway!=null
+              && FreedomCarInformation.fwindow.f_name!=null
+              && FreedomCarInformation.fwindow.f_placeid!=null)
+            {
+             this.textBox_carnumbers.Text = FreedomCarInformation.fwindow.f_carnumbers;
+            this.textBox_contactway.Text = FreedomCarInformation.fwindow.f_contactway;
+            this.textBox_mastername.Text = FreedomCarInformation.fwindow.f_name;
+            this.textBox_placeid.Text = FreedomCarInformation.fwindow.f_placeid;
+            }
+            
+
         }
 
         //加载各项数据
@@ -66,13 +78,15 @@ namespace ParkingSystem
                                                              );
 
                     record.SetOuttime(DateTime.Now);
-                    record.SetMoney(10);
-
+                    double hoursmoney = Convert.ToDouble(this.textBox_hoursmoney.Text);
+                    record.SetMoney(hoursmoney);              
                     this.label_entertime.Text = record.ReturnEntertime();
                     this.label_leavetime.Text = record.ReturnOutertime();
                     this.label_timecost.Text = record.ReturnAllStayTime();
-                    this.label_moneycost.Text = record.ReturnMoney();
-                    this.costlist.Visible = true;
+                    this.label_hoursmoney.Text = hoursmoney.ToString();
+                    this.label_moneycost.Text = record.ReturnMoney();                        
+                    this.costlist.Visible = true;                   
+                    
                 }
                 else
                 {

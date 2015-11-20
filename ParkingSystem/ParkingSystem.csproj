@@ -61,6 +61,12 @@
     <Compile Include="FreedomCarEnter.Designer.cs">
       <DependentUpon>FreedomCarEnter.cs</DependentUpon>
     </Compile>
+    <Compile Include="FreedomCarInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FreedomCarInformation.Designer.cs">
+      <DependentUpon>FreedomCarInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="FreedomCarLeave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FreedomCarEnter.resx">
       <DependentUpon>FreedomCarEnter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FreedomCarInformation.resx">
+      <DependentUpon>FreedomCarInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FreedomCarLeave.resx">
       <DependentUpon>FreedomCarLeave.cs</DependentUpon>

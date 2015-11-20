@@ -97,8 +97,7 @@ namespace ParkingSystem.DAL
                  Convert.ToDateTime(row["outtime"]),
                  Convert.ToDouble(row["money"])
                  );
-
-                 
+                
                 }                
             }
             else

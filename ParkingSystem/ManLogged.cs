@@ -15,6 +15,11 @@ namespace ParkingSystem
     public partial class ManLogged : Form
     {
         public static ManLogged manlog;
+        public string gridview_carnumbers;
+        public int gridview_placeid;
+        public string gridview_name;
+        public string gridview_contactway;
+        public string gridview_entertime;
 
         ArrayList ButtonList = new ArrayList();
 
@@ -84,6 +89,14 @@ namespace ParkingSystem
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            gridview_carnumbers = this.dataGridView_freecars.CurrentRow.Cells["freecarnumbers"].Value.ToString();
+            gridview_placeid = Convert.ToInt32(this.dataGridView_freecars.CurrentRow.Cells["freeplaceid"].Value);
+            gridview_name = this.dataGridView_freecars.CurrentRow.Cells["freemastername"].Value.ToString();
+            gridview_contactway = this.dataGridView_freecars.CurrentRow.Cells["freetel"].Value.ToString();
+            gridview_entertime = this.dataGridView_freecars.CurrentRow.Cells["freeentertime"].Value.ToString();
+            FreedomCarInformation modifywindow = new FreedomCarInformation();
+            modifywindow.Show();
+            
 
         }
 
@@ -141,15 +154,15 @@ namespace ParkingSystem
                 if (record != null)
                 {
                     int index = this.dataGridView_records.Rows.Add();
-                    this.dataGridView_records.Rows[index].Cells["id"].Value=record.ReturnId();
-                    this.dataGridView_records.Rows[index].Cells["mastername"].Value=record.ReturnMasterName();
-                    this.dataGridView_records.Rows[index].Cells["contactway"].Value=record.ReturnMasterContactWay();
-                    this.dataGridView_records.Rows[index].Cells["placeid"].Value=record.ReturnPlaceid();
+                    this.dataGridView_records.Rows[index].Cells["id"].Value = record.ReturnId();
+                    this.dataGridView_records.Rows[index].Cells["mastername"].Value = record.ReturnMasterName();
+                    this.dataGridView_records.Rows[index].Cells["contactway"].Value = record.ReturnMasterContactWay();
+                    this.dataGridView_records.Rows[index].Cells["placeid"].Value = record.ReturnPlaceid();
                     this.dataGridView_records.Rows[index].Cells["carnumbers"].Value = record.ReturnCarNumbers();
-                    this.dataGridView_records.Rows[index].Cells["Entertime"].Value=record.ReturnEntertime();
-                    this.dataGridView_records.Rows[index].Cells["leavetime"].Value=record.ReturnOutertime();
-                    TimeSpan timespan=DateTime.Now-Convert.ToDateTime(record.ReturnEntertime());
-                    this.dataGridView_records.Rows[index].Cells["allstaytime"].Value=timespan.ToString();
+                    this.dataGridView_records.Rows[index].Cells["Entertime"].Value = record.ReturnEntertime();
+                    this.dataGridView_records.Rows[index].Cells["leavetime"].Value = record.ReturnOutertime();
+                    TimeSpan timespan = DateTime.Now - Convert.ToDateTime(record.ReturnEntertime());
+                    this.dataGridView_records.Rows[index].Cells["allstaytime"].Value = string.Format("{0}天{1}小时{2}分钟", timespan.Days, timespan.Hours, timespan.Minutes);
                     this.dataGridView_records.Rows[index].Cells["money"].Value = record.ReturnMoney();
 
                 }
@@ -234,9 +247,9 @@ namespace ParkingSystem
                 this.dataGridView_records.Rows[index].Cells["Entertime"].Value = rows[i]["entertime"];
                 this.dataGridView_records.Rows[index].Cells["leavetime"].Value = rows[i]["outtime"];
                 TimeSpan timespan = DateTime.Now - Convert.ToDateTime(rows[i]["entertime"]);
-                this.dataGridView_records.Rows[index].Cells["allstaytime"].Value = timespan.TotalSeconds.ToString();
+                this.dataGridView_records.Rows[index].Cells["allstaytime"].Value = string.Format("{0}天{1}小时{2}分钟", timespan.Days, timespan.Hours, timespan.Minutes);
                 this.dataGridView_records.Rows[index].Cells["money"].Value = rows[i]["money"];
-                
+
             }
         }
 
