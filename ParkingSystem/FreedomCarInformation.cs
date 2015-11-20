@@ -24,11 +24,11 @@ namespace ParkingSystem
         {
             InitializeComponent();
             fwindow = this;
-            this.text_admin_name.Text = ManLogged.manlog.gridview_name;
-            this.text_carnumbers.Text = ManLogged.manlog.gridview_carnumbers;
-            this.text_placeid.Text = ManLogged.manlog.gridview_placeid.ToString();
-            this.text_admin_tel.Text = ManLogged.manlog.gridview_contactway;
-            this.label_entertime.Text = ManLogged.manlog.gridview_entertime;
+            this.text_admin_name.Text = ManLogged.freecar.ReturnMasterName();
+            this.text_carnumbers.Text = ManLogged.freecar.ReturnCarNumbers();
+            this.text_placeid.Text = ManLogged.freecar.ReturnPlaceid().ToString();
+            this.text_admin_tel.Text = ManLogged.freecar.ReturnContactWay();
+            this.label_entertime.Text = ManLogged.freecar.ReturnEnetertime();
         }
 
         private void Button_freecar_modify_Click(object sender, EventArgs e)

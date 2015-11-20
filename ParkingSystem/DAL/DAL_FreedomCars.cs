@@ -51,7 +51,7 @@ namespace ParkingSystem.DAL
             return freecar;         
         }
         //通过车位号返回一个model对象
-        public Model_FreedomCars ReturnFreecarModelByPlaceid(string placeid)
+        public Model_FreedomCars ReturnFreecarModelByPlaceid(int placeid)
         {
             Model_FreedomCars freecar;
             string sql = "select * from freedomcar where placeid='" + placeid + "'";
@@ -73,6 +73,31 @@ namespace ParkingSystem.DAL
             }
             return freecar;
         }
+
+        public Model_FreedomCars ReturnFreecarModelByName(string name)
+        {
+            Model_FreedomCars freecar;
+            string sql = "select * from freedomcar where placeid='" + name + "'";
+            DataSet dataset = conn.DBQuery(sql);
+            DataTable datatable = dataset.Tables[0];
+            if (datatable.Rows.Count > 0)
+            {
+                DataRow row = datatable.Rows[0];
+                freecar = new Model_FreedomCars(
+                   Convert.ToInt32(row["placeid"].ToString()),
+                   row["carnumbers"].ToString(),
+                   row["name"].ToString(),
+                    row["contactway"].ToString(),
+                    Convert.ToDateTime(row["entertime"]));
+            }
+            else
+            {
+                freecar = null;
+            }
+            return freecar;
+ 
+        }
+
         //返回所有
         public DataSet ReturnFreecarModelByPlaceid()
         {     

@@ -18,7 +18,7 @@ namespace ParkingSystem.BLL
 	/// </summary>
 	public class BLL_StaticCars
 	{
-		private Model_StaticCars staticcars;
+
 		private DAL_StaticCars dal_staticcars;
 		
 		

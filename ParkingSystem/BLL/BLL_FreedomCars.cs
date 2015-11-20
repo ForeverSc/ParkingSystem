@@ -30,13 +30,24 @@ namespace ParkingSystem.BLL
             }
             else if (choice == "车位号")
             {
-                return dal_freecar.ReturnFreecarModelByPlaceid(searchtxt);
+                return dal_freecar.ReturnFreecarModelByPlaceid(Convert.ToInt32(searchtxt));
             }
+            else if (choice=="车主姓名")
+            {
+                return dal_freecar.ReturnFreecarModelByName(searchtxt);
+            }
+            
             else
             {
                 return null;
             }
           
+        }
+
+
+        public static Model_FreedomCars ReturnCarByPlaceid(int placeid)
+        {
+            return dal_freecar.ReturnFreecarModelByPlaceid(placeid);
         }
 
         //返回所有

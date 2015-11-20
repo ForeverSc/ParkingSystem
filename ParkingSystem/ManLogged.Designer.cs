@@ -76,6 +76,12 @@
             this.Button_Freecar_Leave = new System.Windows.Forms.Button();
             this.Button_Freecar_Enter = new System.Windows.Forms.Button();
             this.dataGridView_freecars = new System.Windows.Forms.DataGridView();
+            this.freecarnumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freeplaceid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freemastername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freetel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freeentertime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timestay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -96,17 +102,13 @@
             this.SAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button_refresh = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.freecarnumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freeplaceid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freemastername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freetel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freeentertime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timestay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel_free = new System.Windows.Forms.FlowLayoutPanel();
             this.tabPage5.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -120,6 +122,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_staticcars)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,7 +135,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 34);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(721, 455);
+            this.tabPage5.Size = new System.Drawing.Size(900, 532);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "管理员信息";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -306,7 +309,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(721, 455);
+            this.tabPage4.Size = new System.Drawing.Size(900, 532);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "收费记录";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -470,7 +473,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(721, 455);
+            this.tabPage3.Size = new System.Drawing.Size(900, 532);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "自由车管理";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -525,7 +528,8 @@
             this.comboBox_freecar.FormattingEnabled = true;
             this.comboBox_freecar.Items.AddRange(new object[] {
             "车牌号",
-            "车位号"});
+            "车位号",
+            "车主姓名"});
             this.comboBox_freecar.Location = new System.Drawing.Point(96, 20);
             this.comboBox_freecar.Name = "comboBox_freecar";
             this.comboBox_freecar.Size = new System.Drawing.Size(121, 20);
@@ -608,9 +612,46 @@
             this.dataGridView_freecars.ReadOnly = true;
             this.dataGridView_freecars.RowTemplate.Height = 23;
             this.dataGridView_freecars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_freecars.Size = new System.Drawing.Size(718, 338);
+            this.dataGridView_freecars.Size = new System.Drawing.Size(897, 415);
             this.dataGridView_freecars.TabIndex = 5;
             this.dataGridView_freecars.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // freecarnumbers
+            // 
+            this.freecarnumbers.HeaderText = "车牌号";
+            this.freecarnumbers.Name = "freecarnumbers";
+            this.freecarnumbers.ReadOnly = true;
+            // 
+            // freeplaceid
+            // 
+            this.freeplaceid.HeaderText = "车位号";
+            this.freeplaceid.Name = "freeplaceid";
+            this.freeplaceid.ReadOnly = true;
+            // 
+            // freemastername
+            // 
+            this.freemastername.HeaderText = "车主姓名";
+            this.freemastername.Name = "freemastername";
+            this.freemastername.ReadOnly = true;
+            this.freemastername.Width = 80;
+            // 
+            // freetel
+            // 
+            this.freetel.HeaderText = "联系电话";
+            this.freetel.Name = "freetel";
+            this.freetel.ReadOnly = true;
+            // 
+            // freeentertime
+            // 
+            this.freeentertime.HeaderText = "进入时间";
+            this.freeentertime.Name = "freeentertime";
+            this.freeentertime.ReadOnly = true;
+            // 
+            // timestay
+            // 
+            this.timestay.HeaderText = "已停放时间";
+            this.timestay.Name = "timestay";
+            this.timestay.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -620,7 +661,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(721, 455);
+            this.tabPage2.Size = new System.Drawing.Size(900, 532);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "固定车管理";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -679,6 +720,7 @@
             this.Button_Staticcar_Search.TabIndex = 9;
             this.Button_Staticcar_Search.Text = "查询";
             this.Button_Staticcar_Search.UseVisualStyleBackColor = true;
+            this.Button_Staticcar_Search.Click += new System.EventHandler(this.Button_Staticcar_Search_Click);
             // 
             // textBox_static
             // 
@@ -738,7 +780,7 @@
             this.datagridview_staticcars.Name = "datagridview_staticcars";
             this.datagridview_staticcars.ReadOnly = true;
             this.datagridview_staticcars.RowTemplate.Height = 23;
-            this.datagridview_staticcars.Size = new System.Drawing.Size(718, 351);
+            this.datagridview_staticcars.Size = new System.Drawing.Size(897, 428);
             this.datagridview_staticcars.TabIndex = 4;
             this.datagridview_staticcars.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -793,23 +835,45 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox7);
+            this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage1.Controls.Add(this.button_refresh);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(721, 455);
+            this.tabPage1.Size = new System.Drawing.Size(900, 532);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "当前状态";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox7.Location = new System.Drawing.Point(32, 270);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(544, 256);
+            this.groupBox7.TabIndex = 6;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "固定车位";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.flowLayoutPanel_free);
+            this.groupBox6.Location = new System.Drawing.Point(32, 28);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(544, 225);
+            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "自由车位";
             // 
             // label16
             // 
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(498, 157);
+            this.label16.Location = new System.Drawing.Point(677, 234);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 12);
             this.label16.TabIndex = 3;
@@ -819,43 +883,23 @@
             // 
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(496, 117);
+            this.label15.Location = new System.Drawing.Point(675, 194);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 12);
             this.label15.TabIndex = 2;
             this.label15.Text = "当前状态";
             // 
-            // button1
+            // button_refresh
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(568, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "刷新";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(447, 446);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.button_refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_refresh.BackColor = System.Drawing.Color.Transparent;
+            this.button_refresh.Location = new System.Drawing.Point(747, 112);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(75, 23);
+            this.button_refresh.TabIndex = 1;
+            this.button_refresh.Text = "刷新";
+            this.button_refresh.UseVisualStyleBackColor = false;
+            this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
             // 
             // tabControl1
             // 
@@ -871,49 +915,20 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(729, 493);
+            this.tabControl1.Size = new System.Drawing.Size(908, 570);
             this.tabControl1.TabIndex = 0;
             // 
-            // freecarnumbers
+            // flowLayoutPanel_free
             // 
-            this.freecarnumbers.HeaderText = "车牌号";
-            this.freecarnumbers.Name = "freecarnumbers";
-            this.freecarnumbers.ReadOnly = true;
-            // 
-            // freeplaceid
-            // 
-            this.freeplaceid.HeaderText = "车位号";
-            this.freeplaceid.Name = "freeplaceid";
-            this.freeplaceid.ReadOnly = true;
-            // 
-            // freemastername
-            // 
-            this.freemastername.HeaderText = "车主姓名";
-            this.freemastername.Name = "freemastername";
-            this.freemastername.ReadOnly = true;
-            this.freemastername.Width = 80;
-            // 
-            // freetel
-            // 
-            this.freetel.HeaderText = "联系电话";
-            this.freetel.Name = "freetel";
-            this.freetel.ReadOnly = true;
-            // 
-            // freeentertime
-            // 
-            this.freeentertime.HeaderText = "进入时间";
-            this.freeentertime.Name = "freeentertime";
-            this.freeentertime.ReadOnly = true;
-            // 
-            // timestay
-            // 
-            this.timestay.HeaderText = "已停放时间";
-            this.timestay.Name = "timestay";
-            this.timestay.ReadOnly = true;
+            this.flowLayoutPanel_free.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel_free.Location = new System.Drawing.Point(3, 17);
+            this.flowLayoutPanel_free.Name = "flowLayoutPanel_free";
+            this.flowLayoutPanel_free.Size = new System.Drawing.Size(538, 205);
+            this.flowLayoutPanel_free.TabIndex = 0;
             // 
             // ManLogged
             // 
-            this.ClientSize = new System.Drawing.Size(730, 495);
+            this.ClientSize = new System.Drawing.Size(909, 572);
             this.Controls.Add(this.tabControl1);
             this.Name = "ManLogged";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManLogged_FormClosed_1);
@@ -936,6 +951,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_staticcars)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -965,7 +981,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn SAddress;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label4;
@@ -1006,7 +1021,7 @@
         private System.Windows.Forms.Button Button_Check_AllRecords;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_refresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn carnumbers;
@@ -1023,6 +1038,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn freetel;
         private System.Windows.Forms.DataGridViewTextBoxColumn freeentertime;
         private System.Windows.Forms.DataGridViewTextBoxColumn timestay;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_free;
 
 
 

@@ -49,10 +49,12 @@
   <ItemGroup>
     <Compile Include="BLL\BLL_Administrator.cs" />
     <Compile Include="BLL\BLL_FreedomCars.cs" />
+    <Compile Include="BLL\BLL_ParkingStatus.cs" />
     <Compile Include="BLL\BLL_Records.cs" />
     <Compile Include="BLL\BLL_StaticCars.cs" />
     <Compile Include="DAL\DAL_Administrator.cs" />
     <Compile Include="DAL\DAL_FreedomCars.cs" />
+    <Compile Include="DAL\DAL_ParkingStatus.cs" />
     <Compile Include="DAL\DAL_Records.cs" />
     <Compile Include="DAL\DAL_StaticCars.cs" />
     <Compile Include="FreedomCarEnter.cs">
