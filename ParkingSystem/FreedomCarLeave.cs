@@ -20,18 +20,6 @@ namespace ParkingSystem
         public FreedomCarLeave()
         {
             InitializeComponent();
-            if (FreedomCarInformation.fwindow.f_carnumbers!=null
-              && FreedomCarInformation.fwindow.f_contactway!=null
-              && FreedomCarInformation.fwindow.f_name!=null
-              && FreedomCarInformation.fwindow.f_placeid!=null)
-            {
-             this.textBox_carnumbers.Text = FreedomCarInformation.fwindow.f_carnumbers;
-            this.textBox_contactway.Text = FreedomCarInformation.fwindow.f_contactway;
-            this.textBox_mastername.Text = FreedomCarInformation.fwindow.f_name;
-            this.textBox_placeid.Text = FreedomCarInformation.fwindow.f_placeid;
-            }
-            
-
         }
 
         //加载各项数据
@@ -43,6 +31,7 @@ namespace ParkingSystem
 
         private void Button_Allow_Leave_Click(object sender, EventArgs e)
         {
+            BLL_ParkingStatus.SetPlaceidAvailable(freecar.ReturnPlaceid());
             BLL_FreedomCars.LeaveOneFreeCar(freecar);
             BLL_Records.FinishOneRecord(record);
             this.Close();
@@ -55,7 +44,7 @@ namespace ParkingSystem
 
         private void Button_NextStep_Click(object sender, EventArgs e)
         {
-            if (this.textBox_placeid.Text==""||this.textBox_carnumbers.Text==""||this.textBox_mastername.Text==""||this.textBox_contactway.Text=="")
+            if (this.textBox_placeid.Text == "" || this.textBox_carnumbers.Text == "" || this.textBox_mastername.Text == "" || this.textBox_contactway.Text == "")
             {
                 MessageBox.Show("输入项不能为空");
             }
@@ -79,14 +68,14 @@ namespace ParkingSystem
 
                     record.SetOuttime(DateTime.Now);
                     double hoursmoney = Convert.ToDouble(this.textBox_hoursmoney.Text);
-                    record.SetMoney(hoursmoney);              
+                    record.SetMoney(hoursmoney);
                     this.label_entertime.Text = record.ReturnEntertime();
                     this.label_leavetime.Text = record.ReturnOutertime();
                     this.label_timecost.Text = record.ReturnAllStayTime();
                     this.label_hoursmoney.Text = hoursmoney.ToString();
-                    this.label_moneycost.Text = record.ReturnMoney();                        
-                    this.costlist.Visible = true;                   
-                    
+                    this.label_moneycost.Text = record.ReturnMoney();
+                    this.costlist.Visible = true;
+
                 }
                 else
                 {
@@ -99,11 +88,26 @@ namespace ParkingSystem
 
             }
 
-           
 
+        }
 
+        private void FreedomCarLeave_Load(object sender, EventArgs e)
+        {
+            if (FreedomCarInformation.fwindow.f_carnumbers != null
+               && FreedomCarInformation.fwindow.f_contactway != null
+               && FreedomCarInformation.fwindow.f_name != null
+               && FreedomCarInformation.fwindow.f_placeid != null)
+            {
+                this.textBox_carnumbers.Text = FreedomCarInformation.fwindow.f_carnumbers;
+                this.textBox_contactway.Text = FreedomCarInformation.fwindow.f_contactway;
+                this.textBox_mastername.Text = FreedomCarInformation.fwindow.f_name;
+                this.textBox_placeid.Text = FreedomCarInformation.fwindow.f_placeid;
+            }
+        }
 
-
+        private void FreedomCarLeave_FormClosed(object sender, FormClosedEventArgs e)
+        { 
+            ManLogged.RefreshFreeStatus();
         }
 
 

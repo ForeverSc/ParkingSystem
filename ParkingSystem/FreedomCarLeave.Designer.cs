@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label = new System.Windows.Forms.Label();
+            this.textBox_hoursmoney = new System.Windows.Forms.TextBox();
             this.textBox_contactway = new System.Windows.Forms.TextBox();
             this.textBox_mastername = new System.Windows.Forms.TextBox();
             this.textBox_carnumbers = new System.Windows.Forms.TextBox();
@@ -40,6 +42,8 @@
             this.Button_Allow_Leave = new System.Windows.Forms.Button();
             this.Button_NotAllow = new System.Windows.Forms.Button();
             this.costlist = new System.Windows.Forms.GroupBox();
+            this.label_hoursmoney = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label_moneycost = new System.Windows.Forms.Label();
             this.label_timecost = new System.Windows.Forms.Label();
             this.label_leavetime = new System.Windows.Forms.Label();
@@ -49,10 +53,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Button_NextStep = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox_hoursmoney = new System.Windows.Forms.TextBox();
-            this.label = new System.Windows.Forms.Label();
-            this.label_hoursmoney = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.costlist.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "自由车离开";
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(17, 245);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(101, 12);
+            this.label.TabIndex = 10;
+            this.label.Text = "每小时收费金额：";
+            // 
+            // textBox_hoursmoney
+            // 
+            this.textBox_hoursmoney.Location = new System.Drawing.Point(129, 242);
+            this.textBox_hoursmoney.Name = "textBox_hoursmoney";
+            this.textBox_hoursmoney.Size = new System.Drawing.Size(100, 21);
+            this.textBox_hoursmoney.TabIndex = 9;
             // 
             // textBox_contactway
             // 
@@ -181,6 +197,24 @@
             this.costlist.Text = "账单";
             this.costlist.Visible = false;
             // 
+            // label_hoursmoney
+            // 
+            this.label_hoursmoney.AutoSize = true;
+            this.label_hoursmoney.Location = new System.Drawing.Point(108, 188);
+            this.label_hoursmoney.Name = "label_hoursmoney";
+            this.label_hoursmoney.Size = new System.Drawing.Size(41, 12);
+            this.label_hoursmoney.TabIndex = 9;
+            this.label_hoursmoney.Text = "label9";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(29, 188);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 12);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "收费/小时：";
+            // 
             // label_moneycost
             // 
             this.label_moneycost.AutoSize = true;
@@ -263,40 +297,6 @@
             this.Button_NextStep.UseVisualStyleBackColor = true;
             this.Button_NextStep.Click += new System.EventHandler(this.Button_NextStep_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(29, 188);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(71, 12);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "收费/小时：";
-            // 
-            // textBox_hoursmoney
-            // 
-            this.textBox_hoursmoney.Location = new System.Drawing.Point(129, 242);
-            this.textBox_hoursmoney.Name = "textBox_hoursmoney";
-            this.textBox_hoursmoney.Size = new System.Drawing.Size(100, 21);
-            this.textBox_hoursmoney.TabIndex = 9;
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(17, 245);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(101, 12);
-            this.label.TabIndex = 10;
-            this.label.Text = "每小时收费金额：";
-            // 
-            // label_hoursmoney
-            // 
-            this.label_hoursmoney.AutoSize = true;
-            this.label_hoursmoney.Location = new System.Drawing.Point(108, 188);
-            this.label_hoursmoney.Name = "label_hoursmoney";
-            this.label_hoursmoney.Size = new System.Drawing.Size(41, 12);
-            this.label_hoursmoney.TabIndex = 9;
-            this.label_hoursmoney.Text = "label9";
-            // 
             // FreedomCarLeave
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -309,6 +309,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FreedomCarLeave";
             this.Text = "FreedomCarLeave";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FreedomCarLeave_FormClosed);
+            this.Load += new System.EventHandler(this.FreedomCarLeave_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.costlist.ResumeLayout(false);

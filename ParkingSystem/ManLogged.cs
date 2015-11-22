@@ -17,59 +17,23 @@ namespace ParkingSystem
 
         public static Model_FreedomCars freecar;
         public static ManLogged manlog;
-        //public string gridview_carnumbers;
-        //public int gridview_placeid;
-        //public string gridview_name;
-        //public string gridview_contactway;
-        //public string gridview_entertime;
-        private List<Button> freebuttonlist;
+        public static string buttonplaceid;
 
 
         public ManLogged()
         {
-
-
             InitializeComponent();
             manlog = this;
-
             AdminInformationLog();
-
-
         }
 
-        //通过从ParkingStatus读取到datatble中，然后和button进行数据绑定
-        private void LoadButtons()
-        {
-            DataSet placeset = BLL_ParkingStatus.ReturnParkingStatusDataSet();
-            DataTable placetable = placeset.Tables[0];
-            DataRowCollection placerows = placetable.Rows;
-            freebuttonlist = new List<Button>();
+        
 
-            for (int i = 0; i < 25; i++)
-            {
-                Button newButton = new Button();
-                newButton.Text = placerows[i]["placeid"].ToString();
-                if (placerows[i]["status"].ToString() == "0")
-                {
-                    newButton.BackColor = Color.Green;
-                }
-                else
-                {
-                    newButton.BackColor = Color.Red;
-                }
-                newButton.Click += newButton_Click;
-                freebuttonlist.Add(newButton);
-
-                this.flowLayoutPanel_free.Controls.Add(newButton);
-            }
-
-
-        }
-
-         void newButton_Click(object sender, EventArgs e)
+        public static void newButton_Click(object sender, EventArgs e)
         {
              Button thisbutton = (Button)sender;
-             freecar=BLL_FreedomCars.ReturnCarByPlaceid(Convert.ToInt32(thisbutton.Text)); 
+             freecar=BLL_FreedomCars.ReturnCarByPlaceid(Convert.ToInt32(thisbutton.Text));
+             buttonplaceid =thisbutton.Text;
             if (freecar!=null)
             {
                 FreedomCarInformation fwindow = new FreedomCarInformation();
@@ -77,7 +41,7 @@ namespace ParkingSystem
             }
             else
             {
-                FreedomCarEnter enterwindow = new FreedomCarEnter();
+                MainFreeCarEnter enterwindow = new MainFreeCarEnter();
                 enterwindow.Show();
             }
                        
@@ -100,7 +64,8 @@ namespace ParkingSystem
 
         private void ManLogged_Load(object sender, EventArgs e)
         {
-
+            LoadButtons();
+            this.label_leftplace.Text = BLL_ParkingStatus.ReturnLeftNumbersOfPlace();
         }
 
         private void ManLogged_FormClosed(object sender, FormClosedEventArgs e)
@@ -108,10 +73,6 @@ namespace ParkingSystem
             MainForm.pmain.Show();
         }
 
-        private void ManLogged_Load_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void ManLogged_FormClosed_1(object sender, FormClosedEventArgs e)
         {
@@ -125,13 +86,8 @@ namespace ParkingSystem
                                             this.dataGridView_freecars.CurrentRow.Cells["freemastername"].Value.ToString(),
                                             this.dataGridView_freecars.CurrentRow.Cells["freetel"].Value.ToString(),
                                             Convert.ToDateTime(this.dataGridView_freecars.CurrentRow.Cells["freeentertime"].Value.ToString()));
-            //gridview_carnumbers = this.dataGridView_freecars.CurrentRow.Cells["freecarnumbers"].Value.ToString();
-            //gridview_placeid = Convert.ToInt32(this.dataGridView_freecars.CurrentRow.Cells["freeplaceid"].Value);
-            //gridview_name = this.dataGridView_freecars.CurrentRow.Cells["freemastername"].Value.ToString();
-            //gridview_contactway = this.dataGridView_freecars.CurrentRow.Cells["freetel"].Value.ToString();
-            //gridview_entertime = this.dataGridView_freecars.CurrentRow.Cells["freeentertime"].Value.ToString();
             FreedomCarInformation modifywindow = new FreedomCarInformation();
-            modifywindow.Show();
+            modifywindow.ShowDialog();
 
 
         }
@@ -288,14 +244,106 @@ namespace ParkingSystem
 
             }
         }
-
-        private void button_refresh_Click(object sender, EventArgs e)
+        //通过从ParkingStatus读取到datatble中，然后和button进行数据绑定
+        public static void LoadButtons()
         {
-            LoadButtons();
+            DataSet placeset = BLL_ParkingStatus.ReturnParkingStatusDataSet();
+            DataTable placetable = placeset.Tables[0];
+            DataRowCollection placerows = placetable.Rows;
+            for (int i = 0; i < 25; i++)
+            {
+                Button newButton = new Button();
+                newButton.Text = placerows[i]["placeid"].ToString();
+                if (placerows[i]["status"].ToString() == "0")
+                {
+                    newButton.BackColor = Color.Green;
+                }
+                else
+                {
+                    newButton.BackColor = Color.Red;
+                }
+                newButton.Click += newButton_Click;
+
+                manlog.flowLayoutPanel_free.Controls.Add(newButton);
+            }
+
 
         }
 
+        public static void RefreshFreeStatus()
+        {
+            manlog.flowLayoutPanel_free.Controls.Clear();
+            LoadButtons();
+            manlog.label_leftplace.Text = BLL_ParkingStatus.ReturnLeftNumbersOfPlace();
+        }
+
+        private void button_refresh_Click(object sender, EventArgs e)
+        {
+            this.flowLayoutPanel_free.Controls.Clear();
+            LoadButtons();
+        }
+
         private void Button_Staticcar_Search_Click(object sender, EventArgs e)
+        {
+            //清除数据
+            this.datagridview_staticcars.Rows.Clear();
+            if (this.combox_staticcar.SelectedItem.ToString() == "" || this.textBox_static.Text == "")
+            {
+                MessageBox.Show("查询方式有误，请重试！");
+            }
+            else
+            {
+                //返回结果
+                
+                Model_StaticCars staticcar =  BLL_StaticCars.ReturnSearchBy(this.comboBox_freecar.SelectedItem.ToString(), this.textBox_freecar.Text);
+
+                if (freecar != null)
+                {
+                    int index = this.datagridview_staticcars.Rows.Add();
+                    this.datagridview_staticcars.Rows[index].Cells["staticcarnumbers"].Value =staticcar.ReturnCarnumbers() ;
+                    this.datagridview_staticcars.Rows[index].Cells["staticplaceid"].Value = staticcar.ReturnPlaceid();
+                    this.datagridview_staticcars.Rows[index].Cells["staticname"].Value =staticcar.ReturnName();
+                    this.datagridview_staticcars.Rows[index].Cells["statictel"].Value = staticcar.ReturnContactway();
+                    this.datagridview_staticcars.Rows[index].Cells["staticmoney"].Value = staticcar.ReturnMoney();
+                    this.datagridview_staticcars.Rows[index].Cells["staticaddress"].Value = staticcar.ReturnAddress();
+                    this.datagridview_staticcars.Rows[index].Cells["staticentertime"].Value = staticcar.ReturnEntertime();
+
+                }
+
+            }
+        }
+
+        private void label_leftplace_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_StaticCar_Enter_Click(object sender, EventArgs e)
+        {
+            StaticCarEnter staticEnter = new StaticCarEnter();
+            staticEnter.Show();
+        }
+
+        private void Button_allstaticcars_Click(object sender, EventArgs e)
+        {
+            //清除数据
+            this.datagridview_staticcars.Rows.Clear();
+            DataSet dataset = BLL_StaticCars.ReturnAllStaticCars();
+            DataRowCollection rows = dataset.Tables[0].Rows;
+            for (int i = 0; i < rows.Count; i++)
+            {
+                int index = this.datagridview_staticcars.Rows.Add();
+                this.datagridview_staticcars.Rows[index].Cells["staticcarnumbers"].Value = rows[i]["carnumbers"];
+                this.datagridview_staticcars.Rows[index].Cells["staticplaceid"].Value = rows[i]["placeid"];
+                this.datagridview_staticcars.Rows[index].Cells["staticname"].Value = rows[i]["name"];
+                this.datagridview_staticcars.Rows[index].Cells["statictel"].Value = rows[i]["contactway"];
+                this.datagridview_staticcars.Rows[index].Cells["staticmoney"].Value = rows[i]["money"];
+                this.datagridview_staticcars.Rows[index].Cells["staticaddress"].Value = rows[i]["address"];
+                this.datagridview_staticcars.Rows[index].Cells["staticentertime"].Value = rows[i]["entertime"];
+            }
+        }
+
+        private void Button_modifystaticcar_Click(object sender, EventArgs e)
         {
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace ParkingSystem
 {
-    partial class FreedomCarInformation
+    partial class StaticCarInormation
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Button_freecarInformation_close = new System.Windows.Forms.Button();
-            this.Button_freecar_savemodify = new System.Windows.Forms.Button();
-            this.Button_freecar_modify = new System.Windows.Forms.Button();
+            this.Button_staticcar_leave = new System.Windows.Forms.Button();
+            this.Button_cancel = new System.Windows.Forms.Button();
+            this.Button_staticcar_savemodify = new System.Windows.Forms.Button();
+            this.Button_staticcar_modify = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label_entertime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,39 +43,44 @@
             this.label11 = new System.Windows.Forms.Label();
             this.text_admin_name = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.Button_freecar_leave = new System.Windows.Forms.Button();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Button_freecarInformation_close
+            // Button_staticcar_leave
             // 
-            this.Button_freecarInformation_close.Location = new System.Drawing.Point(543, 308);
-            this.Button_freecarInformation_close.Name = "Button_freecarInformation_close";
-            this.Button_freecarInformation_close.Size = new System.Drawing.Size(75, 23);
-            this.Button_freecarInformation_close.TabIndex = 7;
-            this.Button_freecarInformation_close.Text = "取消";
-            this.Button_freecarInformation_close.UseVisualStyleBackColor = true;
-            this.Button_freecarInformation_close.Click += new System.EventHandler(this.Button_freecarInformation_close_Click);
+            this.Button_staticcar_leave.Location = new System.Drawing.Point(424, 307);
+            this.Button_staticcar_leave.Name = "Button_staticcar_leave";
+            this.Button_staticcar_leave.Size = new System.Drawing.Size(75, 23);
+            this.Button_staticcar_leave.TabIndex = 13;
+            this.Button_staticcar_leave.Text = "离开";
+            this.Button_staticcar_leave.UseVisualStyleBackColor = true;
             // 
-            // Button_freecar_savemodify
+            // Button_cancel
             // 
-            this.Button_freecar_savemodify.Location = new System.Drawing.Point(315, 308);
-            this.Button_freecar_savemodify.Name = "Button_freecar_savemodify";
-            this.Button_freecar_savemodify.Size = new System.Drawing.Size(75, 23);
-            this.Button_freecar_savemodify.TabIndex = 6;
-            this.Button_freecar_savemodify.Text = "保存修改";
-            this.Button_freecar_savemodify.UseVisualStyleBackColor = true;
-            this.Button_freecar_savemodify.Click += new System.EventHandler(this.Button_freecar_savemodify_Click);
+            this.Button_cancel.Location = new System.Drawing.Point(535, 307);
+            this.Button_cancel.Name = "Button_cancel";
+            this.Button_cancel.Size = new System.Drawing.Size(75, 23);
+            this.Button_cancel.TabIndex = 12;
+            this.Button_cancel.Text = "取消";
+            this.Button_cancel.UseVisualStyleBackColor = true;
             // 
-            // Button_freecar_modify
+            // Button_staticcar_savemodify
             // 
-            this.Button_freecar_modify.Location = new System.Drawing.Point(209, 308);
-            this.Button_freecar_modify.Name = "Button_freecar_modify";
-            this.Button_freecar_modify.Size = new System.Drawing.Size(75, 23);
-            this.Button_freecar_modify.TabIndex = 5;
-            this.Button_freecar_modify.Text = "修改信息";
-            this.Button_freecar_modify.UseVisualStyleBackColor = true;
-            this.Button_freecar_modify.Click += new System.EventHandler(this.Button_freecar_modify_Click);
+            this.Button_staticcar_savemodify.Location = new System.Drawing.Point(307, 307);
+            this.Button_staticcar_savemodify.Name = "Button_staticcar_savemodify";
+            this.Button_staticcar_savemodify.Size = new System.Drawing.Size(75, 23);
+            this.Button_staticcar_savemodify.TabIndex = 11;
+            this.Button_staticcar_savemodify.Text = "保存修改";
+            this.Button_staticcar_savemodify.UseVisualStyleBackColor = true;
+            // 
+            // Button_staticcar_modify
+            // 
+            this.Button_staticcar_modify.Location = new System.Drawing.Point(201, 307);
+            this.Button_staticcar_modify.Name = "Button_staticcar_modify";
+            this.Button_staticcar_modify.Size = new System.Drawing.Size(75, 23);
+            this.Button_staticcar_modify.TabIndex = 10;
+            this.Button_staticcar_modify.Text = "修改信息";
+            this.Button_staticcar_modify.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -88,13 +94,12 @@
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.text_admin_name);
             this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Location = new System.Drawing.Point(30, 35);
+            this.groupBox5.Location = new System.Drawing.Point(22, 34);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(588, 230);
-            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "自由车信息";
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // label_entertime
             // 
@@ -181,29 +186,18 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "车主姓名";
             // 
-            // Button_freecar_leave
-            // 
-            this.Button_freecar_leave.Location = new System.Drawing.Point(432, 308);
-            this.Button_freecar_leave.Name = "Button_freecar_leave";
-            this.Button_freecar_leave.Size = new System.Drawing.Size(75, 23);
-            this.Button_freecar_leave.TabIndex = 8;
-            this.Button_freecar_leave.Text = "结账离开";
-            this.Button_freecar_leave.UseVisualStyleBackColor = true;
-            this.Button_freecar_leave.Click += new System.EventHandler(this.Button_freecar_leave_Click);
-            // 
-            // FreedomCarInformation
+            // StaticCarInormation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(675, 450);
-            this.Controls.Add(this.Button_freecar_leave);
-            this.Controls.Add(this.Button_freecarInformation_close);
-            this.Controls.Add(this.Button_freecar_savemodify);
-            this.Controls.Add(this.Button_freecar_modify);
+            this.ClientSize = new System.Drawing.Size(682, 395);
+            this.Controls.Add(this.Button_staticcar_leave);
+            this.Controls.Add(this.Button_cancel);
+            this.Controls.Add(this.Button_staticcar_savemodify);
+            this.Controls.Add(this.Button_staticcar_modify);
             this.Controls.Add(this.groupBox5);
-            this.Name = "FreedomCarInformation";
-            this.Text = "FreedomCarInformation";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FreedomCarInformation_FormClosed);
+            this.Name = "StaticCarInormation";
+            this.Text = "StaticCarModify";
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -212,10 +206,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Button_freecarInformation_close;
-        private System.Windows.Forms.Button Button_freecar_savemodify;
-        private System.Windows.Forms.Button Button_freecar_modify;
+        private System.Windows.Forms.Button Button_staticcar_leave;
+        private System.Windows.Forms.Button Button_cancel;
+        private System.Windows.Forms.Button Button_staticcar_savemodify;
+        private System.Windows.Forms.Button Button_staticcar_modify;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label_entertime;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox text_placeid;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox text_carnumbers;
@@ -224,8 +221,5 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox text_admin_name;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button Button_freecar_leave;
-        private System.Windows.Forms.Label label_entertime;
-        private System.Windows.Forms.Label label1;
     }
 }

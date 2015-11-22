@@ -34,6 +34,7 @@ namespace ParkingSystem.BLL
             }
             else if (choice=="车主姓名")
             {
+                //车主同名的情况
                 return dal_record.ReturnRecordsByMasterName(searchtxt);
             }
             else

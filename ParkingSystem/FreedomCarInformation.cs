@@ -64,10 +64,24 @@ namespace ParkingSystem
             f_name = this.text_admin_name.Text;
             FreedomCarLeave freeleave = new FreedomCarLeave();
             freeleave.Show();
+            this.Close();
             f_carnumbers = null;
             f_contactway = null;
             f_name = null;
             f_placeid = null;
+            
         }
+
+        private void FreedomCarInformation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

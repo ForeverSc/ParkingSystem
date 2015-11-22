@@ -48,10 +48,10 @@ namespace ParkingSystem
             this.Button_enter_allow = new System.Windows.Forms.Button();
             this.Button_enter_ban = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox_leftplacenumbers = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Button_AutoGiven = new System.Windows.Forms.Button();
             this.Button_Status = new System.Windows.Forms.Button();
+            this.label_leftplace = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,7 @@ namespace ParkingSystem
             // 
             this.textBox_placeid.Location = new System.Drawing.Point(78, 126);
             this.textBox_placeid.Name = "textBox_placeid";
+            this.textBox_placeid.ReadOnly = true;
             this.textBox_placeid.Size = new System.Drawing.Size(100, 21);
             this.textBox_placeid.TabIndex = 7;
             // 
@@ -159,7 +160,7 @@ namespace ParkingSystem
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox_leftplacenumbers);
+            this.groupBox2.Controls.Add(this.label_leftplace);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.Button_AutoGiven);
             this.groupBox2.Controls.Add(this.Button_Status);
@@ -169,14 +170,6 @@ namespace ParkingSystem
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "停车场状态";
-            // 
-            // textBox_leftplacenumbers
-            // 
-            this.textBox_leftplacenumbers.Location = new System.Drawing.Point(16, 59);
-            this.textBox_leftplacenumbers.Multiline = true;
-            this.textBox_leftplacenumbers.Name = "textBox_leftplacenumbers";
-            this.textBox_leftplacenumbers.Size = new System.Drawing.Size(206, 126);
-            this.textBox_leftplacenumbers.TabIndex = 3;
             // 
             // label5
             // 
@@ -195,6 +188,7 @@ namespace ParkingSystem
             this.Button_AutoGiven.TabIndex = 1;
             this.Button_AutoGiven.Text = "自动分配";
             this.Button_AutoGiven.UseVisualStyleBackColor = true;
+            this.Button_AutoGiven.Click += new System.EventHandler(this.Button_AutoGiven_Click);
             // 
             // Button_Status
             // 
@@ -204,6 +198,17 @@ namespace ParkingSystem
             this.Button_Status.TabIndex = 0;
             this.Button_Status.Text = "详细状况";
             this.Button_Status.UseVisualStyleBackColor = true;
+            this.Button_Status.Click += new System.EventHandler(this.Button_Status_Click);
+            // 
+            // label_leftplace
+            // 
+            this.label_leftplace.AutoSize = true;
+            this.label_leftplace.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_leftplace.Location = new System.Drawing.Point(67, 79);
+            this.label_leftplace.Name = "label_leftplace";
+            this.label_leftplace.Size = new System.Drawing.Size(101, 38);
+            this.label_leftplace.TabIndex = 3;
+            this.label_leftplace.Text = "label6";
             // 
             // FreedomCarEnter
             // 
@@ -216,6 +221,8 @@ namespace ParkingSystem
             this.Controls.Add(this.groupBox1);
             this.Name = "FreedomCarEnter";
             this.Text = "ParkingSystem";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FreedomCarEnter_FormClosed);
+            this.Load += new System.EventHandler(this.FreedomCarEnter_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -239,6 +246,6 @@ namespace ParkingSystem
         private System.Windows.Forms.Button Button_AutoGiven;
         private System.Windows.Forms.Button Button_Status;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox_leftplacenumbers;
+        private System.Windows.Forms.Label label_leftplace;
 	}
 }

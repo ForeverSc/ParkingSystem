@@ -55,7 +55,7 @@ namespace ParkingSystem
                 timenow
                 );
             BLL_FreedomCars.EnterNewFreeCar(newcar);
-
+            BLL_ParkingStatus.SetPlaceidOccupied(Convert.ToInt32(this.textBox_placeid.Text));
 
 
             Model_Records newrecord = new Model_Records(
@@ -69,13 +69,27 @@ namespace ParkingSystem
 
             this.Close();
 
-            //  records = new BLL_Records(
-            //  this.textBox_mastername.Text,
-            //  this.textBox_tel.Text,
-            //  Convert.ToInt32(this.textBox_placeid.Text),
-            //  this.textBox_carnumbers.Text
-            //  );
-            //records.SaveRecords();
+          
+        }
+
+        private void Button_AutoGiven_Click(object sender, EventArgs e)
+        {
+            this.textBox_placeid.Text = BLL_ParkingStatus.ReturnAvailablePlaceid().ToString();
+        }
+
+        private void Button_Status_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FreedomCarEnter_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ManLogged.RefreshFreeStatus();
+        }
+
+        private void FreedomCarEnter_Load(object sender, EventArgs e)
+        {
+            this.label_leftplace.Text = BLL_ParkingStatus.ReturnLeftNumbersOfPlace();
         }
 	}
 }

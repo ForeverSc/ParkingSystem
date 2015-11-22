@@ -9,6 +9,7 @@
 using System;
 using ParkingSystem.Model;
 using ParkingSystem.DAL;
+using System.Data;
 
 
 namespace ParkingSystem.BLL
@@ -19,62 +20,71 @@ namespace ParkingSystem.BLL
 	public class BLL_StaticCars
 	{
 
-		private DAL_StaticCars dal_staticcars;
-		
-		
-		//自由车（车牌，placeID，姓名，颜色，包月费用）
-		//查找操作
-		//通过车牌号查找
-		BLL_StaticCars(string carnumbers)
-		{
-			dal_staticcars=new DAL_StaticCars();
-			
-			if (dal_staticcars.DAL_ReturnStaticCarsWithCarNumbers(carnumbers)==null) {
-				//dataset操作
-				//staticcars=new Model_StaticCars();
-			}
-			else
-			{
-				//显示无
-			}			
-		}
-        /*
-		//通过车主姓名查找
-		 BLL_StaticCars(string name)
-		{
-			dal_staticcars=new DAL_StaticCars();
-			
-			if (dal_staticcars.ReturnStaticCarsByMasterName(name)==null) {
-				//dataset操作
-				//staticcars=new Model_StaticCars();
-			}
-			else
-			{
-				//显示无
-			}			
-		}
-		//通过placeid查找
-		 BLL_StaticCars(int placeid)
-		{
-			dal_staticcars=new DAL_StaticCars();
-			
-			if (dal_staticcars.ReturnStaticCarsByPlaceid(placeid)==null) {
-				//dataset操作
-				//staticcars=new Model_StaticCars();
-			}
-			else
-			{
-				//显示无
-			}			
-		}
-		*/
-		
-		
-        ////修改操作
-        //public void SetStaticCarsInformation(string carnumbers,string name,int placeid ,string color,double money )
-        //{
-        //    staticcars.SetInformation(carnumbers,name,placeid,color,money);
-        //}
-		
+		private static DAL_StaticCars dal_staticcars=new DAL_StaticCars();
+
+        //搜索返回结果
+        public static Model_StaticCars ReturnSearchBy(string choice, string searchtxt)
+        {
+
+            if (choice == "车牌号")
+            {
+                return dal_staticcars.ReturnStaticcarModelByCarnumbers(searchtxt);
+            }
+            else if (choice == "车位号")
+            {
+                return dal_staticcars.ReturnStaticcarModelByPlaceid(Convert.ToInt32(searchtxt));
+            }
+            else if (choice == "车主姓名")
+            {
+                return dal_staticcars.ReturnStaticcarModelByName(searchtxt);
+            }
+
+            else
+            {
+                return null;
+            }
+
+        }
+
+        //返回所有
+        public static DataSet ReturnAllStaticCars()
+        {
+            return dal_staticcars.ReturnAllStaticCars();
+        }
+
+       
+        //查询是否存在这辆固定车
+        public static bool ReturnExistStaticCar(Model_StaticCars car)
+        {
+            DataSet dataset = dal_staticcars.ReturnExistOfOne(car);
+            if (dataset.Tables[0].Rows.Count>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static Model_StaticCars ReturnStaticCarByCarnumbers(string carnumbers)
+        {
+            return dal_staticcars.ReturnStaticcarModelByName(carnumbers);
+        }
+
+
+
+        public static void UpdateStaticCar(Model_StaticCars car)
+        {
+            dal_staticcars.UpdateInformation(car);
+ 
+        }
+
+      
+        
+
+
+
+
+
 	}
 }

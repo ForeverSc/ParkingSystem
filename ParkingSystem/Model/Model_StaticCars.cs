@@ -20,31 +20,43 @@ namespace ParkingSystem.Model
 		private string carnumbers;
         private string name;
         private string address;
-        private int age;
         private string contactway;
-		private double money;//包月费用
+        private DateTime entertime;
+		private double money;//欠费金额
  
-	
-		public Model_StaticCars(int placeid,int age, string carnumbers,string name,string address,string contactway,double money)
+	//查询返回时使用
+		public Model_StaticCars(int placeid,string carnumbers,string name,string address,string contactway,double money,DateTime entertime)
 		{
 			this.placeid=placeid;
 			this.carnumbers=carnumbers;
             this.name = name;
-            this.address = address;
-            this.age = age;
+            this.address = address;     
             this.contactway = contactway;
-			this.money=money;	
+			this.money=money;
+            this.entertime = entertime;
 		}
+
+        //进入时使用
+        public Model_StaticCars(string carnumbers, string name, string contactway)
+        {
+            this.carnumbers = carnumbers;
+            this.name = name;
+            this.contactway = contactway;
+        }
+
+
+        public void SetEntertime(DateTime entertime)
+        {
+            this.entertime = entertime;
+
+        }
+        
 		
 		public int ReturnPlaceid()
 		{
 			return placeid;
 		}
 
-        public int ReturnAge()
-        {
-            return age;
-        }
         public string ReturnAddress()
         {
             return address;
@@ -68,16 +80,13 @@ namespace ParkingSystem.Model
         {
             return contactway;
         }
-       
-		
-        //public void SetInformation(string carnumbers,string name,int placeid ,string color,double money)
-        //{
-        //    this.carnumbers=carnumbers;
-        //    this.master.SetName(name);
-        //    this.placeid = placeid;
-        //    this.color = color;
-        //    this.money = money;
-        //}
+
+        public string ReturnEntertime()
+        {
+            return entertime.ToString();
+        }
+        
+
 		
 		
 		
