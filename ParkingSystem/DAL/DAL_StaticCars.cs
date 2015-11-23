@@ -30,14 +30,28 @@ namespace ParkingSystem.DAL
             if (datatable.Rows.Count>0)
             {
                 DataRow row = datatable.Rows[0];
-                staticcar = new Model_StaticCars(
-                    Convert.ToInt32(row["placeid"].ToString())
-                   , row["carnumbers"].ToString()
-                   , row["name"].ToString()
-                   , row["address"].ToString()
-                   , row["contactway"].ToString()
-                   , Convert.ToDouble(row["money"].ToString())
-                   ,Convert.ToDateTime(row["entertime"].ToString()));
+                if (row["entertime"] is DBNull)
+                {
+                    staticcar = new Model_StaticCars(
+                   Convert.ToInt32(row["placeid"].ToString())
+                  , row["carnumbers"].ToString()
+                  , row["name"].ToString()
+                  , row["address"].ToString()
+                  , row["contactway"].ToString()
+                  );
+                }
+                else
+                {
+                    staticcar = new Model_StaticCars(
+                      Convert.ToInt32(row["placeid"].ToString())
+                     , row["carnumbers"].ToString()
+                     , row["name"].ToString()
+                     , row["address"].ToString()
+                     , row["contactway"].ToString()
+                     , Convert.ToDouble(row["money"].ToString())
+                     , Convert.ToDateTime(row["entertime"].ToString()));
+
+                }
             }
             else
             {
@@ -56,14 +70,28 @@ namespace ParkingSystem.DAL
             if (datatable.Rows.Count > 0)
             {
                 DataRow row = datatable.Rows[0];
-                staticcar = new Model_StaticCars(
-                    Convert.ToInt32(row["placeid"].ToString())
-                   , row["carnumbers"].ToString()
-                   , row["name"].ToString()
-                   , row["address"].ToString()
-                   , row["contactway"].ToString()
-                   , Convert.ToDouble(row["money"].ToString())
-                   , Convert.ToDateTime(row["entertime"].ToString()));
+                if (row["entertime"] is DBNull)
+                {
+                    staticcar = new Model_StaticCars(
+                   Convert.ToInt32(row["placeid"].ToString())
+                  , row["carnumbers"].ToString()
+                  , row["name"].ToString()
+                  , row["address"].ToString()
+                  , row["contactway"].ToString()
+                  );
+                }
+                else
+                {
+                    staticcar = new Model_StaticCars(
+                      Convert.ToInt32(row["placeid"].ToString())
+                     , row["carnumbers"].ToString()
+                     , row["name"].ToString()
+                     , row["address"].ToString()
+                     , row["contactway"].ToString()
+                     , Convert.ToDouble(row["money"].ToString())
+                     , Convert.ToDateTime(row["entertime"].ToString()));
+
+                }
             }
             else
             {
@@ -82,7 +110,19 @@ namespace ParkingSystem.DAL
             if (datatable.Rows.Count > 0)
             {
                 DataRow row = datatable.Rows[0];
-                staticcar = new Model_StaticCars(
+
+                if (row["entertime"] is DBNull)
+                {
+                    staticcar = new Model_StaticCars(
+                   Convert.ToInt32(row["placeid"].ToString())
+                  , row["carnumbers"].ToString()
+                  , row["name"].ToString()
+                  , row["address"].ToString()
+                  , row["contactway"].ToString()
+                  );
+                }
+                else
+                { staticcar = new Model_StaticCars(
                     Convert.ToInt32(row["placeid"].ToString())
                    , row["carnumbers"].ToString()
                    , row["name"].ToString()
@@ -90,6 +130,9 @@ namespace ParkingSystem.DAL
                    , row["contactway"].ToString()
                    , Convert.ToDouble(row["money"].ToString())
                    , Convert.ToDateTime(row["entertime"].ToString()));
+
+                }
+               
             }
             else
             {
@@ -120,13 +163,36 @@ namespace ParkingSystem.DAL
                       " SET placeid='" + car.ReturnPlaceid()
                       + "',carnumbers='" + car.ReturnCarnumbers()
                       + "',name='" + car.ReturnName()
-                      + "',contactway='" + car.ReturnContactway() + "'" 
-                      + "',address='"+car.ReturnAddress()+"'"
-                      + "',entertime='"+car.ReturnEntertime()+"'"
+                      + "',contactway='" + car.ReturnContactway() 
+                      + "',address='"+car.ReturnAddress()
+                      + "',entertime='"+car.ReturnEntertime()
                       + "',money='"+car.ReturnMoney()+"'"+
                       " WHERE carnumbers='" + car.ReturnCarnumbers() + "'";
             conn.DBcmd(sql);
         }
+
+
+        public void AddNewStaticCar(Model_StaticCars car)
+        {
+            string sql = string.Format("INSERT INTO "
+                                       + "staticcars (placeid,carnumbers,name,contactway,address) "
+                                       + " VALUES('{0}','{1}','{2}','{3}','{4}')"
+                                       , car.ReturnPlaceid(),
+                                       car.ReturnCarnumbers(),
+                                       car.ReturnName(),
+                                       car.ReturnContactway(),
+                                       car.ReturnAddress()
+                                       );
+            conn.DBcmd(sql);
+        }
+
+
+        public void DeleteStaticCar(string carnumbers)
+        {
+            string sql = "delete from staticcars where carnumbers='" + carnumbers + "'";
+            conn.DBcmd(sql);
+        }
+
 
     }
 }

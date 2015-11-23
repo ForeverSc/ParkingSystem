@@ -101,8 +101,9 @@
             this.label_entertime.AutoSize = true;
             this.label_entertime.Location = new System.Drawing.Point(101, 141);
             this.label_entertime.Name = "label_entertime";
-            this.label_entertime.Size = new System.Drawing.Size(0, 12);
+            this.label_entertime.Size = new System.Drawing.Size(35, 12);
             this.label_entertime.TabIndex = 11;
+            this.label_entertime.Text = "label";
             // 
             // label1
             // 

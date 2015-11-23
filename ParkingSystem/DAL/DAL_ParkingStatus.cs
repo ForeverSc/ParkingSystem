@@ -21,9 +21,9 @@ namespace ParkingSystem.DAL
             return conn.DBQuery(sql);
         }
         //返回自由车
-        public DataSet ReturnAvailablePlaceid()
+        public DataSet ReturnFreeAvailablePlaceid()
         {
-            string sql = "select * from parkingstatus where status = '0' and placeid<25";
+            string sql = "select * from parkingstatus where status = '0' and placeid<=25";
             return conn.DBQuery(sql);
         }
 
@@ -33,9 +33,9 @@ namespace ParkingSystem.DAL
             conn.DBcmd(sql);
         }
 
-        public DataSet ReturnLeftNumbersOfPlace()
+        public DataSet ReturnFreeLeftNumbersOfPlace()
         {
-            string sql = "select COUNT(*) from parkingstatus where status='0' and placeid<25";
+            string sql = "select COUNT(*) from parkingstatus where status='0' and placeid<=25";
             return conn.DBQuery(sql);
         }
         public void SetPlaceidAvailable(int placeid)

@@ -93,15 +93,23 @@ namespace ParkingSystem
 
         private void FreedomCarLeave_Load(object sender, EventArgs e)
         {
-            if (FreedomCarInformation.fwindow.f_carnumbers != null
-               && FreedomCarInformation.fwindow.f_contactway != null
-               && FreedomCarInformation.fwindow.f_name != null
-               && FreedomCarInformation.fwindow.f_placeid != null)
+            if (FreedomCarInformation.f_carnumbers != ""
+               && FreedomCarInformation.f_contactway != ""
+               && FreedomCarInformation.f_name != ""
+               && FreedomCarInformation.f_placeid != "")
             {
-                this.textBox_carnumbers.Text = FreedomCarInformation.fwindow.f_carnumbers;
-                this.textBox_contactway.Text = FreedomCarInformation.fwindow.f_contactway;
-                this.textBox_mastername.Text = FreedomCarInformation.fwindow.f_name;
-                this.textBox_placeid.Text = FreedomCarInformation.fwindow.f_placeid;
+                this.textBox_carnumbers.Text = FreedomCarInformation.f_carnumbers;
+                this.textBox_contactway.Text = FreedomCarInformation.f_contactway;
+                this.textBox_mastername.Text = FreedomCarInformation.f_name;
+                this.textBox_placeid.Text = FreedomCarInformation.f_placeid;
+            }
+            else
+            {
+                this.textBox_carnumbers.Text = "";
+                this.textBox_contactway.Text = "";
+                this.textBox_mastername.Text = "";
+                this.textBox_placeid.Text = "";
+                
             }
         }
 

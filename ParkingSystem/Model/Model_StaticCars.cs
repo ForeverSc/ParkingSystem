@@ -23,6 +23,10 @@ namespace ParkingSystem.Model
         private string contactway;
         private DateTime entertime;
 		private double money;//欠费金额
+        private int p1;
+        private string p2;
+        private string p3;
+        private string p4;
  
 	//查询返回时使用
 		public Model_StaticCars(int placeid,string carnumbers,string name,string address,string contactway,double money,DateTime entertime)
@@ -39,6 +43,35 @@ namespace ParkingSystem.Model
         //进入时使用
         public Model_StaticCars(string carnumbers, string name, string contactway)
         {
+            this.carnumbers = carnumbers;
+            this.name = name;
+            this.contactway = contactway;
+        }
+
+        //双击查询时使用
+        public Model_StaticCars(int placeid, string carnumbers, string name, string contactway, DateTime entertime)
+        {
+            this.placeid = placeid;
+            this.name = name;
+            this.contactway = contactway;
+            this.carnumbers = carnumbers;
+            this.entertime = entertime;
+        }
+
+
+        public Model_StaticCars(int placeid, string carnumbers, string name, string contactway, string address)
+        {
+            this.placeid = placeid;
+            this.name = name;
+            this.contactway = contactway;
+            this.carnumbers = carnumbers;
+            this.address = address;
+        }
+
+        public Model_StaticCars(int placeid, string carnumbers, string name, string contactway)
+        {
+
+            this.placeid = placeid;
             this.carnumbers = carnumbers;
             this.name = name;
             this.contactway = contactway;

@@ -155,47 +155,6 @@ namespace ParkingSystem.DAL
 
 
 
-
-
-
-        ////通过placeid找到自由车
-        //public DataSet ReturnFreedomCarsByPlaceid(int placeid)
-        //{
-        //    string sql="";
-        //    return conn.DBQuery(sql);
-        //}
-        ////通过主人姓名找到自由车
-        //public DataSet ReturnFreedomCarsByMasterName(string name)
-        //{
-        //    string sql="";
-        //    return conn.DBQuery(sql);
-        //}
-		
-        ////通过车牌号返回自由车
-        //public DataSet DAL_ReturnFreedomCarsWithCarNumbers(string carnumbers)
-        //{
-        //    string sql = "select * from freedomcar where carnumbers='" + carnumbers + "'";
-        //    return conn.DBQuery(sql);
-        //}
-
-        ////保存自由车信息
-        //public void SaveInformation(int placeid,string carnumbers,string name)
-        //{
-        //    string sql = string.Format("INSERT INTO "
-        //                                + "records (placeid,carnumbers,name) "
-        //                                + " VALUES({0},{1},{2})"
-        //                                ,placeid,carnumbers,name);
-        //    conn.DBcmd(sql);
-        //}
-        //////修改信息
-        ////public void UpdateInformation(int placeid,string carnumbers,string name)
-        ////{
-        ////    string sql = "UPDATE freedomcar " +
-        ////              " SET placeid='" + placeid + "',carnumbers='" + carnumbers + "',name='" + name + "'"+
-        ////              " WHERE carnumbers='"+carnumbers+"'";
-        ////}
-
-
         //删除自由车
         public void Delete(string carnumbers)
         {

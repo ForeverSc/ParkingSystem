@@ -16,9 +16,9 @@ namespace ParkingSystem.BLL
             return dal_parkingstatus.ReturnParkingStatusDataSet();
         }
 
-        public static int ReturnAvailablePlaceid()
+        public static int ReturnFreeAvailablePlaceid()
         {
-            DataSet dataset = dal_parkingstatus.ReturnAvailablePlaceid();
+            DataSet dataset = dal_parkingstatus.ReturnFreeAvailablePlaceid();
             return Convert.ToInt32(dataset.Tables[0].Rows[0]["placeid"].ToString());
         }
 
@@ -27,9 +27,9 @@ namespace ParkingSystem.BLL
             dal_parkingstatus.SetPlaceidOccupied(placeid);
         }
 
-        public static string ReturnLeftNumbersOfPlace()
+        public static string ReturnFreeLeftNumbersOfPlace()
         {
-            return dal_parkingstatus.ReturnLeftNumbersOfPlace().Tables[0].Rows[0][0].ToString();
+            return dal_parkingstatus.ReturnFreeLeftNumbersOfPlace().Tables[0].Rows[0][0].ToString();
         }
 
         public static void SetPlaceidAvailable(int placeid)

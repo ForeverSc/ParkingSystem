@@ -93,37 +93,7 @@ namespace ParkingSystem.BLL
 
 
 
-        //freedomcar(车牌，placeid，姓名，颜色)
-
-        ////查找操作
-        ////通过placeid找到相应的freecar
-        //public BLL_FreedomCars(Model_FreedomCars mfreecar)
-        //{
-        //    dal_freecar=new DAL_FreedomCars();
-
-        //    if (dal_freecar.DAL_ReturnFreedomCarsWithCarNumbers(carnumbers).Tables[0].Rows.Count!=0) {
-        //        master = new Model_Master(mastername, contactway, carnumbers);
-        //        freecar=new Model_FreedomCars(placeid,carnumbers,master);
-        //    }
-        //    else
-        //    {
-        //        freecar = null;
-        //    }	
-        //}
-
-        ////删除操作
-        //public static void DeleteFreedomCar(string carnumbers)
-        //{
-        //    dal_freecar.Delete(carnumbers);
-        //}
-
-
-        ////修改操作
-        //public void SetFreedomCarsInformation(string carnumbers, string name, int placeid, string color)
-        //{
-        //    freecar.SetInformation(carnumbers, name, placeid, color);
-        //    dal_freecar.UpdateInformation(placeid, carnumbers, name);
-        //}
+       
 
 
     }

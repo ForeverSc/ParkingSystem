@@ -32,11 +32,12 @@ namespace ParkingSystem
                 );
             if (BLL_StaticCars.ReturnExistStaticCar(car)==true)
             {
-                BLL_ParkingStatus.SetPlaceidAvailable(car.ReturnPlaceid());
+                car = BLL_StaticCars.ReturnStaticCarByCarnumbers(this.textBox_carnumbers.Text);
                 Model_Records record=BLL_Records.ReturnRecordByNumbersAndName(car.ReturnCarnumbers(),car.ReturnName());
                 record.SetOuttime(DateTime.Now);
-                BLL_Records.FinishOneRecord(record);    
-                
+                BLL_ParkingStatus.SetPlaceidAvailable(car.ReturnPlaceid());
+                BLL_Records.FinishOneRecord(record);
+                this.Close();         
             }
             else
             {
@@ -47,8 +48,36 @@ namespace ParkingSystem
                 this.textBox_placeid.Text = "";
             }
 
+           
 
+        }
 
+        private void StaticCarLeave_Load(object sender, EventArgs e)
+        {
+            if (StaticCarInormation.staticcar!=null)
+            {
+                this.textBox_carnumbers.Text = StaticCarInormation.staticcar.ReturnCarnumbers();
+                this.textBox_contactway.Text = StaticCarInormation.staticcar.ReturnContactway();
+                this.textBox_name.Text = StaticCarInormation.staticcar.ReturnName();
+                this.textBox_placeid.Text = StaticCarInormation.staticcar.ReturnPlaceid().ToString();
+            }
+            else
+            {
+                this.textBox_carnumbers.Text = "";
+                this.textBox_contactway.Text = "";
+                this.textBox_name.Text = "";
+                this.textBox_placeid.Text = "";
+
+            }
+        }
+
+        private void StaticCarLeave_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ManLogged.RefreshFreeStatus();
+            this.textBox_carnumbers.Text = "";
+            this.textBox_contactway.Text = "";
+            this.textBox_name.Text = "";
+            this.textBox_placeid.Text = "";
         }
     }
 }

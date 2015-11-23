@@ -35,8 +35,8 @@ namespace ParkingSystem
 
                 //然后对进入时间进行更新
                entertime = DateTime.Now;
-             
-                this.label_static_address.Text = car.ReturnAddress();
+
+               this.label_static_address.Text = car.ReturnAddress();
                 this.label_static_carnumbes.Text = car.ReturnCarnumbers();
                 this.label_static_contactway.Text = car.ReturnContactway();
                 this.label_static_placeid.Text = car.ReturnPlaceid().ToString();
@@ -44,6 +44,7 @@ namespace ParkingSystem
                 this.label_static_entertime.Text = entertime.ToString();
 
                 this.groupBox2.Visible = true;
+                this.Button_static_allowenter.Visible = true;
                
 
             }
@@ -82,6 +83,11 @@ namespace ParkingSystem
         private void Button_static_notallowed_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void StaticCarEnter_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ManLogged.RefreshFreeStatus();
         }
     }
 }

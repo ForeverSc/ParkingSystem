@@ -72,7 +72,7 @@ namespace ParkingSystem.Model
         public void SetMoney(double hoursmoney)
         {
             TimeSpan timespan = outertime - entertime;
-            this.money = ((timespan.Days * 24 + timespan.Hours + timespan.Minutes / 60) * hoursmoney);
+            this.money = ((timespan.Days * 24 + timespan.Hours + timespan.Minutes / 60.0) * hoursmoney);
         }
 
         public string ReturnAllStayTime()
@@ -85,30 +85,6 @@ namespace ParkingSystem.Model
             return money.ToString();
         }
 
-
-
-
-
-
-        //设置离开时间
-
-
-        //设置账单
-
-
-
-		
-        ////获取并设置离开时间
-        //public void Setoutertime(DateTime outertime)
-        //{
-        //    this.outertime=outertime;
-        //}
-        ////设置收费
-        //public void SetMoney(string money)
-        //{
-        //    this.money=money;
-        //}
-		
         //返回所有信息
 		public int ReturnId()
 		{
@@ -139,11 +115,7 @@ namespace ParkingSystem.Model
 		{
 			return carnumbers;
 		}
-        //public string ReturnColor()
-        //{
-        //    return freedomcar.ReturnColor();
-        //}
-		
+
 		public string ReturnMasterName()
 		{
 			return mastername;
@@ -152,14 +124,7 @@ namespace ParkingSystem.Model
 		{
 			return contactway;
 		}
-        //public string ReturnMasterAddress()
-        //{
-        //    return freedomcar.ReturnMasterAddress();
-        //}
-        //public int 	ReturnMasterAge()
-        //{
-        //    return freedomcar.ReturnMasterAge();
-        //}
+   
 		
 		
 		

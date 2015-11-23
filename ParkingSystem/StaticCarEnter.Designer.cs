@@ -39,6 +39,8 @@
             this.Button_static_notallowed = new System.Windows.Forms.Button();
             this.Button_static_allowenter = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label_static_entertime = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label_static_address = new System.Windows.Forms.Label();
             this.label_static_contactway = new System.Windows.Forms.Label();
             this.label_static_mastername = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label_static_entertime = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -171,6 +171,24 @@
             this.groupBox2.Text = "确认信息";
             this.groupBox2.Visible = false;
             // 
+            // label_static_entertime
+            // 
+            this.label_static_entertime.AutoSize = true;
+            this.label_static_entertime.Location = new System.Drawing.Point(89, 196);
+            this.label_static_entertime.Name = "label_static_entertime";
+            this.label_static_entertime.Size = new System.Drawing.Size(47, 12);
+            this.label_static_entertime.TabIndex = 11;
+            this.label_static_entertime.Text = "label10";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 196);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 12);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "进入时间";
+            // 
             // label_static_address
             // 
             this.label_static_address.AutoSize = true;
@@ -261,24 +279,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "车牌号";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 196);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 12);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "进入时间";
-            // 
-            // label_static_entertime
-            // 
-            this.label_static_entertime.AutoSize = true;
-            this.label_static_entertime.Location = new System.Drawing.Point(89, 196);
-            this.label_static_entertime.Name = "label_static_entertime";
-            this.label_static_entertime.Size = new System.Drawing.Size(47, 12);
-            this.label_static_entertime.TabIndex = 11;
-            this.label_static_entertime.Text = "label10";
-            // 
             // StaticCarEnter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -291,6 +291,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "StaticCarEnter";
             this.Text = "StaticCarEnter";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StaticCarEnter_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -13,11 +13,11 @@ namespace ParkingSystem
 {
     public partial class FreedomCarInformation : Form
     {
-        public static FreedomCarInformation fwindow;
-        public string f_carnumbers;
-        public string f_placeid;
-        public string f_name;
-        public string f_contactway;
+        public static FreedomCarInformation fwindow=null;
+        public static string f_carnumbers="";
+        public static string f_placeid="";
+        public static string f_name="";
+        public static string f_contactway="";
 
 
         public FreedomCarInformation()
@@ -63,7 +63,7 @@ namespace ParkingSystem
             f_placeid = this.text_placeid.Text;
             f_name = this.text_admin_name.Text;
             FreedomCarLeave freeleave = new FreedomCarLeave();
-            freeleave.Show();
+            freeleave.ShowDialog();
             this.Close();
             f_carnumbers = null;
             f_contactway = null;

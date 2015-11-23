@@ -43,44 +43,51 @@
             this.label11 = new System.Windows.Forms.Label();
             this.text_admin_name = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
+            this.button_static_enter = new System.Windows.Forms.Button();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // Button_staticcar_leave
             // 
-            this.Button_staticcar_leave.Location = new System.Drawing.Point(424, 307);
+            this.Button_staticcar_leave.Location = new System.Drawing.Point(466, 306);
             this.Button_staticcar_leave.Name = "Button_staticcar_leave";
             this.Button_staticcar_leave.Size = new System.Drawing.Size(75, 23);
             this.Button_staticcar_leave.TabIndex = 13;
             this.Button_staticcar_leave.Text = "离开";
             this.Button_staticcar_leave.UseVisualStyleBackColor = true;
+            this.Button_staticcar_leave.Click += new System.EventHandler(this.Button_staticcar_leave_Click);
             // 
             // Button_cancel
             // 
-            this.Button_cancel.Location = new System.Drawing.Point(535, 307);
+            this.Button_cancel.Location = new System.Drawing.Point(561, 306);
             this.Button_cancel.Name = "Button_cancel";
             this.Button_cancel.Size = new System.Drawing.Size(75, 23);
             this.Button_cancel.TabIndex = 12;
             this.Button_cancel.Text = "取消";
             this.Button_cancel.UseVisualStyleBackColor = true;
+            this.Button_cancel.Click += new System.EventHandler(this.Button_cancel_Click);
             // 
             // Button_staticcar_savemodify
             // 
-            this.Button_staticcar_savemodify.Location = new System.Drawing.Point(307, 307);
+            this.Button_staticcar_savemodify.Location = new System.Drawing.Point(185, 306);
             this.Button_staticcar_savemodify.Name = "Button_staticcar_savemodify";
             this.Button_staticcar_savemodify.Size = new System.Drawing.Size(75, 23);
             this.Button_staticcar_savemodify.TabIndex = 11;
             this.Button_staticcar_savemodify.Text = "保存修改";
             this.Button_staticcar_savemodify.UseVisualStyleBackColor = true;
+            this.Button_staticcar_savemodify.Click += new System.EventHandler(this.Button_staticcar_savemodify_Click);
             // 
             // Button_staticcar_modify
             // 
-            this.Button_staticcar_modify.Location = new System.Drawing.Point(201, 307);
+            this.Button_staticcar_modify.Location = new System.Drawing.Point(104, 306);
             this.Button_staticcar_modify.Name = "Button_staticcar_modify";
             this.Button_staticcar_modify.Size = new System.Drawing.Size(75, 23);
             this.Button_staticcar_modify.TabIndex = 10;
             this.Button_staticcar_modify.Text = "修改信息";
             this.Button_staticcar_modify.UseVisualStyleBackColor = true;
+            this.Button_staticcar_modify.Click += new System.EventHandler(this.Button_staticcar_modify_Click);
             // 
             // groupBox5
             // 
@@ -106,8 +113,9 @@
             this.label_entertime.AutoSize = true;
             this.label_entertime.Location = new System.Drawing.Point(101, 141);
             this.label_entertime.Name = "label_entertime";
-            this.label_entertime.Size = new System.Drawing.Size(0, 12);
+            this.label_entertime.Size = new System.Drawing.Size(35, 12);
             this.label_entertime.TabIndex = 11;
+            this.label_entertime.Text = "label";
             // 
             // label1
             // 
@@ -186,11 +194,44 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "车主姓名";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(385, 306);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "月费结算";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button_delete
+            // 
+            this.button_delete.Location = new System.Drawing.Point(283, 306);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_delete.TabIndex = 15;
+            this.button_delete.Text = "删除该车";
+            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
+            // button_static_enter
+            // 
+            this.button_static_enter.Location = new System.Drawing.Point(23, 306);
+            this.button_static_enter.Name = "button_static_enter";
+            this.button_static_enter.Size = new System.Drawing.Size(75, 23);
+            this.button_static_enter.TabIndex = 16;
+            this.button_static_enter.Text = "进入";
+            this.button_static_enter.UseVisualStyleBackColor = true;
+            this.button_static_enter.Click += new System.EventHandler(this.button_static_enter_Click);
+            // 
             // StaticCarInormation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 395);
+            this.Controls.Add(this.button_static_enter);
+            this.Controls.Add(this.button_delete);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Button_staticcar_leave);
             this.Controls.Add(this.Button_cancel);
             this.Controls.Add(this.Button_staticcar_savemodify);
@@ -198,6 +239,8 @@
             this.Controls.Add(this.groupBox5);
             this.Name = "StaticCarInormation";
             this.Text = "StaticCarModify";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StaticCarInormation_FormClosed);
+            this.Load += new System.EventHandler(this.StaticCarInormation_Load);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -221,5 +264,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox text_admin_name;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_delete;
+        private System.Windows.Forms.Button button_static_enter;
     }
 }

@@ -38,7 +38,6 @@ namespace ParkingSystem.BLL
             {
                 return dal_staticcars.ReturnStaticcarModelByName(searchtxt);
             }
-
             else
             {
                 return null;
@@ -68,7 +67,7 @@ namespace ParkingSystem.BLL
         }
         public static Model_StaticCars ReturnStaticCarByCarnumbers(string carnumbers)
         {
-            return dal_staticcars.ReturnStaticcarModelByName(carnumbers);
+            return dal_staticcars.ReturnStaticcarModelByCarnumbers(carnumbers);
         }
 
 
@@ -79,12 +78,22 @@ namespace ParkingSystem.BLL
  
         }
 
-      
-        
+
+        public static void DeleteStaticCar(string carnumbers)
+        {
+            dal_staticcars.DeleteStaticCar(carnumbers);
+        }
 
 
 
+        public static Model_StaticCars ReturnCarByPlaceid(int placeid)
+        {
+            return dal_staticcars.ReturnStaticcarModelByPlaceid(placeid);
+        }
 
-
-	}
+        public static void AddNewStaticCar(Model_StaticCars car)
+        {
+            dal_staticcars.AddNewStaticCar(car);
+        }
+    }
 }

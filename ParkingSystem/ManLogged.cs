@@ -16,6 +16,8 @@ namespace ParkingSystem
     {
 
         public static Model_FreedomCars freecar;
+        public static Model_StaticCars staticcar;
+        public static Model_Records record;
         public static ManLogged manlog;
         public static string buttonplaceid;
 
@@ -48,6 +50,25 @@ namespace ParkingSystem
             
         }
 
+        public static void staticButton_Click(object sender, EventArgs e)
+        {
+            Button thisbutton = (Button)sender;
+            staticcar= BLL_StaticCars.ReturnCarByPlaceid(Convert.ToInt32(thisbutton.Text));        
+            buttonplaceid = thisbutton.Text;
+            if (staticcar != null)
+            {
+                StaticCarInormation fwindow = new StaticCarInormation();
+                fwindow.Show();
+            }
+            else
+            {
+                StaticCarEnter enterwindow = new StaticCarEnter();
+                enterwindow.Show();
+            }
+
+
+        }
+
 
        
 
@@ -62,10 +83,37 @@ namespace ParkingSystem
         }
 
 
+        private static void LoadStaticButtons()
+        {
+            DataSet placeset = BLL_ParkingStatus.ReturnParkingStatusDataSet();
+            DataTable placetable = placeset.Tables[0];
+            DataRowCollection placerows = placetable.Rows;
+            for (int i = 25; i < 50; i++)
+            {
+                Button newButton = new Button();
+                newButton.Text = placerows[i]["placeid"].ToString();
+                if (placerows[i]["status"].ToString() == "0")
+                {
+                    newButton.BackColor = Color.Green;
+                }
+                else
+                {
+                    newButton.BackColor = Color.Red;
+                }
+                newButton.Click+=staticButton_Click;
+
+                manlog.flowLayoutPanel_static.Controls.Add(newButton);
+            }
+ 
+        }
+
+
         private void ManLogged_Load(object sender, EventArgs e)
         {
             LoadButtons();
-            this.label_leftplace.Text = BLL_ParkingStatus.ReturnLeftNumbersOfPlace();
+            LoadStaticButtons();
+            this.label_leftplace.Text = BLL_ParkingStatus.ReturnFreeLeftNumbersOfPlace();
+            
         }
 
         private void ManLogged_FormClosed(object sender, FormClosedEventArgs e)
@@ -146,7 +194,6 @@ namespace ParkingSystem
                 if (record != null)
                 {
                     int index = this.dataGridView_records.Rows.Add();
-                    this.dataGridView_records.Rows[index].Cells["id"].Value = record.ReturnId();
                     this.dataGridView_records.Rows[index].Cells["mastername"].Value = record.ReturnMasterName();
                     this.dataGridView_records.Rows[index].Cells["contactway"].Value = record.ReturnMasterContactWay();
                     this.dataGridView_records.Rows[index].Cells["placeid"].Value = record.ReturnPlaceid();
@@ -191,6 +238,8 @@ namespace ParkingSystem
                     this.dataGridView_freecars.Rows[index].Cells["freemastername"].Value = freecar.ReturnMasterName();
                     this.dataGridView_freecars.Rows[index].Cells["freetel"].Value = freecar.ReturnContactWay();
                     this.dataGridView_freecars.Rows[index].Cells["freeentertime"].Value = freecar.ReturnEnetertime();
+                    TimeSpan timespan = DateTime.Now -Convert.ToDateTime(freecar.ReturnEnetertime());
+                    this.dataGridView_freecars.Rows[index].Cells["timestay"].Value = string.Format("{0}天{1}小时{2}分钟", timespan.Days, timespan.Hours, timespan.Minutes);
 
                 }
 
@@ -217,6 +266,8 @@ namespace ParkingSystem
                 this.dataGridView_freecars.Rows[index].Cells["freemastername"].Value = rows[i]["name"];
                 this.dataGridView_freecars.Rows[index].Cells["freetel"].Value = rows[i]["contactway"];
                 this.dataGridView_freecars.Rows[index].Cells["freeentertime"].Value = rows[i]["entertime"];
+                TimeSpan timespan = DateTime.Now - Convert.ToDateTime(rows[i]["entertime"]);
+                this.dataGridView_freecars.Rows[index].Cells["timestay"].Value = string.Format("{0}天{1}小时{2}分钟", timespan.Days, timespan.Hours, timespan.Minutes);
             }
 
 
@@ -231,7 +282,6 @@ namespace ParkingSystem
             for (int i = 0; i < rows.Count; i++)
             {
                 int index = this.dataGridView_records.Rows.Add();
-                this.dataGridView_records.Rows[index].Cells["id"].Value = rows[i]["id"];
                 this.dataGridView_records.Rows[index].Cells["mastername"].Value = rows[i]["name"];
                 this.dataGridView_records.Rows[index].Cells["carnumbers"].Value = rows[i]["carnumbers"];
                 this.dataGridView_records.Rows[index].Cells["contactway"].Value = rows[i]["contactway"];
@@ -273,21 +323,24 @@ namespace ParkingSystem
         public static void RefreshFreeStatus()
         {
             manlog.flowLayoutPanel_free.Controls.Clear();
+            manlog.flowLayoutPanel_static.Controls.Clear();
             LoadButtons();
-            manlog.label_leftplace.Text = BLL_ParkingStatus.ReturnLeftNumbersOfPlace();
+            LoadStaticButtons();
+            manlog.label_leftplace.Text = BLL_ParkingStatus.ReturnFreeLeftNumbersOfPlace();
         }
 
         private void button_refresh_Click(object sender, EventArgs e)
         {
             this.flowLayoutPanel_free.Controls.Clear();
             LoadButtons();
+            LoadStaticButtons();
         }
 
         private void Button_Staticcar_Search_Click(object sender, EventArgs e)
         {
             //清除数据
             this.datagridview_staticcars.Rows.Clear();
-            if (this.combox_staticcar.SelectedItem.ToString() == "" || this.textBox_static.Text == "")
+            if (this.combox_staticcar.SelectedItem.ToString() == "" || this.textBox_static_search.Text == "")
             {
                 MessageBox.Show("查询方式有误，请重试！");
             }
@@ -295,9 +348,9 @@ namespace ParkingSystem
             {
                 //返回结果
                 
-                Model_StaticCars staticcar =  BLL_StaticCars.ReturnSearchBy(this.comboBox_freecar.SelectedItem.ToString(), this.textBox_freecar.Text);
+                Model_StaticCars staticcar =  BLL_StaticCars.ReturnSearchBy(this.combox_staticcar.SelectedItem.ToString(), this.textBox_static_search.Text);
 
-                if (freecar != null)
+                if (staticcar != null)
                 {
                     int index = this.datagridview_staticcars.Rows.Add();
                     this.datagridview_staticcars.Rows[index].Cells["staticcarnumbers"].Value =staticcar.ReturnCarnumbers() ;
@@ -347,6 +400,51 @@ namespace ParkingSystem
         {
 
         }
+
+        private void datagridview_staticcars_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (this.datagridview_staticcars.CurrentRow.Cells["staticentertime"].Value.ToString()=="")
+            {
+                staticcar = new Model_StaticCars(Convert.ToInt32(this.datagridview_staticcars.CurrentRow.Cells["staticplaceid"].Value.ToString())
+                , this.datagridview_staticcars.CurrentRow.Cells["staticcarnumbers"].Value.ToString()
+                , this.datagridview_staticcars.CurrentRow.Cells["staticname"].Value.ToString()
+                , this.datagridview_staticcars.CurrentRow.Cells["statictel"].Value.ToString()     
+                                        );
+            }
+            else
+            {
+                staticcar = new Model_StaticCars(Convert.ToInt32(this.datagridview_staticcars.CurrentRow.Cells["staticplaceid"].Value.ToString())
+                , this.datagridview_staticcars.CurrentRow.Cells["staticcarnumbers"].Value.ToString()
+                , this.datagridview_staticcars.CurrentRow.Cells["staticname"].Value.ToString()
+                , this.datagridview_staticcars.CurrentRow.Cells["statictel"].Value.ToString()
+                , Convert.ToDateTime(this.datagridview_staticcars.CurrentRow.Cells["staticentertime"].Value.ToString())  
+                                        );
+
+            }
+       
+            StaticCarInormation swindow = new StaticCarInormation();
+            swindow.Show();
+        }
+
+        private void button_addnewstaticcar_Click(object sender, EventArgs e)
+        {
+            AddNewStaticCar addnew = new AddNewStaticCar();
+            addnew.Show();
+        }
+
+        private void Button_StaticCar_Leave_Click(object sender, EventArgs e)
+        {
+            StaticCarLeave staticcarleave = new StaticCarLeave();
+            staticcarleave.Show();
+        }
+
+        private void dataGridView_records_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
+
+    
 
 
 

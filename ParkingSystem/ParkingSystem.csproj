@@ -47,6 +47,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewStaticCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewStaticCar.Designer.cs">
+      <DependentUpon>AddNewStaticCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="BLL\BLL_Administrator.cs" />
     <Compile Include="BLL\BLL_FreedomCars.cs" />
     <Compile Include="BLL\BLL_ParkingStatus.cs" />
@@ -100,6 +106,12 @@
     <Compile Include="Model\Model_StaticCars.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaticCarCostMoney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaticCarCostMoney.Designer.cs">
+      <DependentUpon>StaticCarCostMoney.cs</DependentUpon>
+    </Compile>
     <Compile Include="StaticCarEnter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddNewStaticCar.resx">
+      <DependentUpon>AddNewStaticCar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FreedomCarEnter.resx">
       <DependentUpon>FreedomCarEnter.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManLogged.resx">
       <DependentUpon>ManLogged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaticCarCostMoney.resx">
+      <DependentUpon>StaticCarCostMoney.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaticCarEnter.resx">
       <DependentUpon>StaticCarEnter.cs</DependentUpon>

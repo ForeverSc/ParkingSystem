@@ -74,7 +74,7 @@ namespace ParkingSystem
 
         private void Button_AutoGiven_Click(object sender, EventArgs e)
         {
-            this.textBox_placeid.Text = BLL_ParkingStatus.ReturnAvailablePlaceid().ToString();
+            this.textBox_placeid.Text = BLL_ParkingStatus.ReturnFreeAvailablePlaceid().ToString();
         }
 
         private void Button_Status_Click(object sender, EventArgs e)
@@ -89,7 +89,7 @@ namespace ParkingSystem
 
         private void FreedomCarEnter_Load(object sender, EventArgs e)
         {
-            this.label_leftplace.Text = BLL_ParkingStatus.ReturnLeftNumbersOfPlace();
+            this.label_leftplace.Text = BLL_ParkingStatus.ReturnFreeLeftNumbersOfPlace();
         }
 	}
 }
