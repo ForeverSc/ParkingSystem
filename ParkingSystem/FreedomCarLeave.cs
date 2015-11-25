@@ -73,7 +73,7 @@ namespace ParkingSystem
                     this.label_leavetime.Text = record.ReturnOutertime();
                     this.label_timecost.Text = record.ReturnAllStayTime();
                     this.label_hoursmoney.Text = hoursmoney.ToString();
-                    this.label_moneycost.Text = record.ReturnMoney();
+                    this.label_moneycost.Text =string.Format("{0:CF}",record.ReturnMoney());
                     this.costlist.Visible = true;
 
                 }

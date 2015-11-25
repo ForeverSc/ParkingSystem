@@ -64,34 +64,6 @@ namespace ParkingSystem.Model
         }
 
 
-
-
-        //public string ReturnMasterName()
-        //{
-        //    return master.ReturnName();
-        //}
-        //public string ReturnMasterContactWay()
-        //{
-        //    return master.ReturnContactway();
-        //}
-        //public string ReturnMasterAddress()
-        //{
-        //    return master.ReturnAddress();
-        //}
-        //public int 	ReturnMasterAge()
-        //{
-        //    return master.ReturnAge();
-        //}
-		//修改信息
-
-        //public void SetInformation(string carnumbers,string name,int placeid,string color)
-        //{
-        //    this.carnumbers = carnumbers;
-        //   // this.master.SetName(name);
-        //    this.placeid=placeid;
-        //    this.color=color;
-
-        //}
         
 		
 	}

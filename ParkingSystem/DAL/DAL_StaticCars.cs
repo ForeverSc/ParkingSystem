@@ -36,8 +36,8 @@ namespace ParkingSystem.DAL
                    Convert.ToInt32(row["placeid"].ToString())
                   , row["carnumbers"].ToString()
                   , row["name"].ToString()
+                  , row["contactway"].ToString() 
                   , row["address"].ToString()
-                  , row["contactway"].ToString()
                   );
                 }
                 else
@@ -45,7 +45,7 @@ namespace ParkingSystem.DAL
                     staticcar = new Model_StaticCars(
                       Convert.ToInt32(row["placeid"].ToString())
                      , row["carnumbers"].ToString()
-                     , row["name"].ToString()
+                     , row["name"].ToString()                
                      , row["address"].ToString()
                      , row["contactway"].ToString()
                      , Convert.ToDouble(row["money"].ToString())
@@ -76,8 +76,8 @@ namespace ParkingSystem.DAL
                    Convert.ToInt32(row["placeid"].ToString())
                   , row["carnumbers"].ToString()
                   , row["name"].ToString()
-                  , row["address"].ToString()
                   , row["contactway"].ToString()
+                  , row["address"].ToString()
                   );
                 }
                 else
@@ -117,19 +117,20 @@ namespace ParkingSystem.DAL
                    Convert.ToInt32(row["placeid"].ToString())
                   , row["carnumbers"].ToString()
                   , row["name"].ToString()
-                  , row["address"].ToString()
                   , row["contactway"].ToString()
+                  , row["address"].ToString()
                   );
                 }
                 else
-                { staticcar = new Model_StaticCars(
-                    Convert.ToInt32(row["placeid"].ToString())
-                   , row["carnumbers"].ToString()
-                   , row["name"].ToString()
-                   , row["address"].ToString()
-                   , row["contactway"].ToString()
-                   , Convert.ToDouble(row["money"].ToString())
-                   , Convert.ToDateTime(row["entertime"].ToString()));
+                {
+                    staticcar = new Model_StaticCars(
+                      Convert.ToInt32(row["placeid"].ToString())
+                     , row["carnumbers"].ToString()
+                     , row["name"].ToString()
+                     , row["address"].ToString()
+                     , row["contactway"].ToString()
+                     , Convert.ToDouble(row["money"].ToString())
+                     , Convert.ToDateTime(row["entertime"].ToString()));
 
                 }
                
@@ -194,5 +195,11 @@ namespace ParkingSystem.DAL
         }
 
 
+
+        public void LeaveStaticCar(Model_StaticCars car)
+        {
+            string sql = "update staticcars set entertime='0:00:00' where carnumbers='" + car.ReturnCarnumbers() + "'";
+            conn.DBcmd(sql);
+        }
     }
 }

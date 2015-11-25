@@ -95,5 +95,11 @@ namespace ParkingSystem.BLL
         {
             dal_staticcars.AddNewStaticCar(car);
         }
+
+        public static void LeaveStaticCar(Model_StaticCars car)
+        {
+            dal_staticcars.LeaveStaticCar(car);
+        }
+
     }
 }
