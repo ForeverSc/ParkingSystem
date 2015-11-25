@@ -23,10 +23,7 @@ namespace ParkingSystem.Model
         private string contactway;
         private DateTime entertime;
 		private double money;//欠费金额
-        //private int p1;
-        //private string p2;
-        //private string p3;
-        //private string p4;
+
  
 	//查询返回时使用
 		public Model_StaticCars(int placeid,string carnumbers,string name,string address,string contactway,double money,DateTime entertime)
@@ -77,6 +74,14 @@ namespace ParkingSystem.Model
             this.contactway = contactway;
         }
 
+        public Model_StaticCars(string carnumbers, string name, string contactway, string placeid)
+        {
+            this.carnumbers = carnumbers;
+            this.name = name;
+            this.contactway = contactway;
+            this.placeid = Convert.ToInt32(placeid);
+        }
+
         public void SetEntertime(DateTime entertime)
         {
             this.entertime = entertime;
@@ -114,7 +119,15 @@ namespace ParkingSystem.Model
 
         public string ReturnEntertime()
         {
-            return entertime.ToString();
+            if (entertime.ToString() == "1900/1/1 0:00:00")
+            {
+                return "";
+            }
+            else
+            {
+                return entertime.ToString();
+            }
+            
         }
 	}
 }

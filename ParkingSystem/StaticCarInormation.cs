@@ -24,7 +24,7 @@ namespace ParkingSystem
         {
             staticcar = ManLogged.staticcar;
             this.text_admin_name.Text = ManLogged.staticcar.ReturnName();
-            this.text_carnumbers.Text = ManLogged.staticcar.ReturnContactway();
+            this.text_carnumbers.Text = ManLogged.staticcar.ReturnCarnumbers();
             this.text_admin_tel.Text = ManLogged.staticcar.ReturnContactway();
             this.text_placeid.Text = ManLogged.staticcar.ReturnPlaceid().ToString();
             this.label_entertime.Text = ManLogged.staticcar.ReturnEntertime();
@@ -53,7 +53,7 @@ namespace ParkingSystem
         private void Button_staticcar_leave_Click(object sender, EventArgs e)
         {
             StaticCarLeave carleave = new StaticCarLeave();
-            carleave.Show();
+            carleave.ShowDialog();
             this.Close();
         }
 

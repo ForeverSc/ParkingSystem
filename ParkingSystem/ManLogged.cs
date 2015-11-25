@@ -55,7 +55,7 @@ namespace ParkingSystem
             Button thisbutton = (Button)sender;
             staticcar= BLL_StaticCars.ReturnCarByPlaceid(Convert.ToInt32(thisbutton.Text));        
             buttonplaceid = thisbutton.Text;
-            if (freecar != null)
+            if (staticcar != null)
             {
                 StaticCarInormation fwindow = new StaticCarInormation();
                 fwindow.Show();
@@ -215,7 +215,7 @@ namespace ParkingSystem
                         timespan = Convert.ToDateTime(record.ReturnOutertime()) - Convert.ToDateTime(record.ReturnEntertime());
                     }
                     this.dataGridView_records.Rows[index].Cells["allstaytime"].Value = string.Format("{0}天{1}小时{2}分钟", timespan.Days, timespan.Hours, timespan.Minutes);
-                    this.dataGridView_records.Rows[index].Cells["money"].Value = record.ReturnMoney();
+                    this.dataGridView_records.Rows[index].Cells["money"].Value = string.Format("{0:CF}",record.ReturnMoney());
 
                 }
 
@@ -312,7 +312,7 @@ namespace ParkingSystem
                     timespan = Convert.ToDateTime(rows[i]["outtime"].ToString()) - Convert.ToDateTime(rows[i]["entertime"].ToString());
                 }
                 this.dataGridView_records.Rows[index].Cells["allstaytime"].Value = string.Format("{0}天{1}小时{2}分钟", timespan.Days, timespan.Hours, timespan.Minutes);
-                this.dataGridView_records.Rows[index].Cells["money"].Value = rows[i]["money"];
+                this.dataGridView_records.Rows[index].Cells["money"].Value =string.Format("{0:CF}",rows[i]["money"].ToString())  ;
 
             }
         }
@@ -415,7 +415,16 @@ namespace ParkingSystem
                 this.datagridview_staticcars.Rows[index].Cells["statictel"].Value = rows[i]["contactway"];
                 this.datagridview_staticcars.Rows[index].Cells["staticmoney"].Value = rows[i]["money"];
                 this.datagridview_staticcars.Rows[index].Cells["staticaddress"].Value = rows[i]["address"];
-                this.datagridview_staticcars.Rows[index].Cells["staticentertime"].Value = rows[i]["entertime"];
+                if (rows[i]["entertime"].ToString() == "1900/1/1 0:00:00")
+                {
+                    this.datagridview_staticcars.Rows[index].Cells["staticentertime"].Value = "";
+                }
+                else
+                {     
+                    this.datagridview_staticcars.Rows[index].Cells["staticentertime"].Value = rows[i]["entertime"];
+
+                }
+           
             }
         }
 

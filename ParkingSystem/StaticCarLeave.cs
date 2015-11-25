@@ -28,14 +28,16 @@ namespace ParkingSystem
             Model_StaticCars car = new Model_StaticCars(
                 this.textBox_carnumbers.Text,
                 this.textBox_name.Text,
-                this.textBox_contactway.Text
+                this.textBox_contactway.Text,
+                this.textBox_placeid.Text
                 );
             if (BLL_StaticCars.ReturnExistStaticCar(car)==true)
             {
                 BLL_ParkingStatus.SetPlaceidAvailable(car.ReturnPlaceid());
-                Model_Records record=BLL_Records.ReturnRecordByNumbersAndName(car.ReturnCarnumbers(),car.ReturnName());
+                Model_Records record = BLL_Records.ReturnSearchBy("车主姓名", this.textBox_name.Text);
                 record.SetOuttime(DateTime.Now);
-                BLL_Records.FinishOneRecord(record);
+                BLL_Records.FinishOneRecord(record); 
+                BLL_StaticCars.LeaveStaticCar(car);
                 this.Close();         
             }
             else
@@ -46,6 +48,7 @@ namespace ParkingSystem
                 this.textBox_name.Text = "";
                 this.textBox_placeid.Text = "";
             }
+           
 
            
 
