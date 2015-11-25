@@ -29,7 +29,7 @@ namespace Parking_DB
             {
                 conn = new SqlConnection();
                 //连接数据库的字符串
-                conn.ConnectionString = "Data Source=.;Initial Catalog=ParkingSystem;Integrated Security=True";
+              conn.ConnectionString = "Data Source=.;Initial Catalog=ParkingSystem;Integrated Security=True";
                // conn.ConnectionString = ConfigurationManager.AppSettings["sqlconnection"].ToString();
             }
 

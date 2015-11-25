@@ -51,7 +51,7 @@
             // 
             // Button_staticcar_leave
             // 
-            this.Button_staticcar_leave.Location = new System.Drawing.Point(466, 306);
+            this.Button_staticcar_leave.Location = new System.Drawing.Point(147, 285);
             this.Button_staticcar_leave.Name = "Button_staticcar_leave";
             this.Button_staticcar_leave.Size = new System.Drawing.Size(75, 23);
             this.Button_staticcar_leave.TabIndex = 13;
@@ -61,7 +61,7 @@
             // 
             // Button_cancel
             // 
-            this.Button_cancel.Location = new System.Drawing.Point(561, 306);
+            this.Button_cancel.Location = new System.Drawing.Point(535, 338);
             this.Button_cancel.Name = "Button_cancel";
             this.Button_cancel.Size = new System.Drawing.Size(75, 23);
             this.Button_cancel.TabIndex = 12;
@@ -71,7 +71,7 @@
             // 
             // Button_staticcar_savemodify
             // 
-            this.Button_staticcar_savemodify.Location = new System.Drawing.Point(185, 306);
+            this.Button_staticcar_savemodify.Location = new System.Drawing.Point(197, 338);
             this.Button_staticcar_savemodify.Name = "Button_staticcar_savemodify";
             this.Button_staticcar_savemodify.Size = new System.Drawing.Size(75, 23);
             this.Button_staticcar_savemodify.TabIndex = 11;
@@ -81,7 +81,7 @@
             // 
             // Button_staticcar_modify
             // 
-            this.Button_staticcar_modify.Location = new System.Drawing.Point(104, 306);
+            this.Button_staticcar_modify.Location = new System.Drawing.Point(100, 338);
             this.Button_staticcar_modify.Name = "Button_staticcar_modify";
             this.Button_staticcar_modify.Size = new System.Drawing.Size(75, 23);
             this.Button_staticcar_modify.TabIndex = 10;
@@ -103,7 +103,7 @@
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Location = new System.Drawing.Point(22, 34);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(588, 230);
+            this.groupBox5.Size = new System.Drawing.Size(588, 221);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "自由车信息";
@@ -111,7 +111,7 @@
             // label_entertime
             // 
             this.label_entertime.AutoSize = true;
-            this.label_entertime.Location = new System.Drawing.Point(101, 141);
+            this.label_entertime.Location = new System.Drawing.Point(99, 145);
             this.label_entertime.Name = "label_entertime";
             this.label_entertime.Size = new System.Drawing.Size(35, 12);
             this.label_entertime.TabIndex = 11;
@@ -120,7 +120,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 141);
+            this.label1.Location = new System.Drawing.Point(30, 145);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 10;
@@ -196,7 +196,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(385, 306);
+            this.button1.Location = new System.Drawing.Point(439, 338);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 14;
@@ -206,7 +206,7 @@
             // 
             // button_delete
             // 
-            this.button_delete.Location = new System.Drawing.Point(283, 306);
+            this.button_delete.Location = new System.Drawing.Point(237, 285);
             this.button_delete.Name = "button_delete";
             this.button_delete.Size = new System.Drawing.Size(75, 23);
             this.button_delete.TabIndex = 15;
@@ -216,7 +216,7 @@
             // 
             // button_static_enter
             // 
-            this.button_static_enter.Location = new System.Drawing.Point(23, 306);
+            this.button_static_enter.Location = new System.Drawing.Point(58, 285);
             this.button_static_enter.Name = "button_static_enter";
             this.button_static_enter.Size = new System.Drawing.Size(75, 23);
             this.button_static_enter.TabIndex = 16;
@@ -228,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 395);
+            this.ClientSize = new System.Drawing.Size(638, 395);
             this.Controls.Add(this.button_static_enter);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button1);

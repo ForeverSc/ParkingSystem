@@ -53,7 +53,7 @@ namespace ParkingSystem
         private void Button_staticcar_leave_Click(object sender, EventArgs e)
         {
             StaticCarLeave carleave = new StaticCarLeave();
-            carleave.ShowDialog();
+            carleave.Show();
             this.Close();
         }
 
@@ -77,7 +77,6 @@ namespace ParkingSystem
         private void StaticCarInormation_FormClosed(object sender, FormClosedEventArgs e)
         {
             ManLogged.RefreshFreeStatus();
-            staticcar = null;
         }
 
         private void button_static_enter_Click(object sender, EventArgs e)

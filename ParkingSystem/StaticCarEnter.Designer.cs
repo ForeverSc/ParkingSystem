@@ -120,7 +120,7 @@
             // 
             // Button_staticcar_next
             // 
-            this.Button_staticcar_next.Location = new System.Drawing.Point(375, 450);
+            this.Button_staticcar_next.Location = new System.Drawing.Point(375, 386);
             this.Button_staticcar_next.Name = "Button_staticcar_next";
             this.Button_staticcar_next.Size = new System.Drawing.Size(75, 23);
             this.Button_staticcar_next.TabIndex = 1;
@@ -130,7 +130,7 @@
             // 
             // Button_static_notallowed
             // 
-            this.Button_static_notallowed.Location = new System.Drawing.Point(617, 450);
+            this.Button_static_notallowed.Location = new System.Drawing.Point(617, 386);
             this.Button_static_notallowed.Name = "Button_static_notallowed";
             this.Button_static_notallowed.Size = new System.Drawing.Size(75, 23);
             this.Button_static_notallowed.TabIndex = 2;
@@ -140,7 +140,7 @@
             // 
             // Button_static_allowenter
             // 
-            this.Button_static_allowenter.Location = new System.Drawing.Point(498, 450);
+            this.Button_static_allowenter.Location = new System.Drawing.Point(498, 386);
             this.Button_static_allowenter.Name = "Button_static_allowenter";
             this.Button_static_allowenter.Size = new System.Drawing.Size(75, 23);
             this.Button_static_allowenter.TabIndex = 3;
@@ -174,7 +174,7 @@
             // label_static_entertime
             // 
             this.label_static_entertime.AutoSize = true;
-            this.label_static_entertime.Location = new System.Drawing.Point(89, 196);
+            this.label_static_entertime.Location = new System.Drawing.Point(87, 205);
             this.label_static_entertime.Name = "label_static_entertime";
             this.label_static_entertime.Size = new System.Drawing.Size(47, 12);
             this.label_static_entertime.TabIndex = 11;
@@ -183,7 +183,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 196);
+            this.label9.Location = new System.Drawing.Point(20, 205);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 10;
@@ -201,7 +201,7 @@
             // label_static_contactway
             // 
             this.label_static_contactway.AutoSize = true;
-            this.label_static_contactway.Location = new System.Drawing.Point(87, 137);
+            this.label_static_contactway.Location = new System.Drawing.Point(87, 134);
             this.label_static_contactway.Name = "label_static_contactway";
             this.label_static_contactway.Size = new System.Drawing.Size(47, 12);
             this.label_static_contactway.TabIndex = 8;
@@ -210,7 +210,7 @@
             // label_static_mastername
             // 
             this.label_static_mastername.AutoSize = true;
-            this.label_static_mastername.Location = new System.Drawing.Point(87, 99);
+            this.label_static_mastername.Location = new System.Drawing.Point(87, 98);
             this.label_static_mastername.Name = "label_static_mastername";
             this.label_static_mastername.Size = new System.Drawing.Size(47, 12);
             this.label_static_mastername.TabIndex = 7;
@@ -219,7 +219,7 @@
             // label_static_placeid
             // 
             this.label_static_placeid.AutoSize = true;
-            this.label_static_placeid.Location = new System.Drawing.Point(85, 28);
+            this.label_static_placeid.Location = new System.Drawing.Point(87, 28);
             this.label_static_placeid.Name = "label_static_placeid";
             this.label_static_placeid.Size = new System.Drawing.Size(47, 12);
             this.label_static_placeid.TabIndex = 6;
@@ -228,7 +228,7 @@
             // label_static_carnumbes
             // 
             this.label_static_carnumbes.AutoSize = true;
-            this.label_static_carnumbes.Location = new System.Drawing.Point(85, 63);
+            this.label_static_carnumbes.Location = new System.Drawing.Point(87, 63);
             this.label_static_carnumbes.Name = "label_static_carnumbes";
             this.label_static_carnumbes.Size = new System.Drawing.Size(41, 12);
             this.label_static_carnumbes.TabIndex = 5;
@@ -237,7 +237,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 169);
+            this.label8.Location = new System.Drawing.Point(30, 169);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 4;
@@ -246,7 +246,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 134);
+            this.label7.Location = new System.Drawing.Point(20, 134);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 3;
@@ -255,7 +255,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 99);
+            this.label6.Location = new System.Drawing.Point(20, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 2;
@@ -264,7 +264,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 28);
+            this.label5.Location = new System.Drawing.Point(26, 28);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 1;
@@ -273,7 +273,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 63);
+            this.label3.Location = new System.Drawing.Point(26, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 0;
@@ -283,7 +283,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 504);
+            this.ClientSize = new System.Drawing.Size(729, 446);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Button_static_allowenter);
             this.Controls.Add(this.Button_static_notallowed);

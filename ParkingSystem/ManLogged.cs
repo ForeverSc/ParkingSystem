@@ -55,7 +55,7 @@ namespace ParkingSystem
             Button thisbutton = (Button)sender;
             staticcar= BLL_StaticCars.ReturnCarByPlaceid(Convert.ToInt32(thisbutton.Text));        
             buttonplaceid = thisbutton.Text;
-            if (staticcar != null)
+            if (freecar != null)
             {
                 StaticCarInormation fwindow = new StaticCarInormation();
                 fwindow.Show();
@@ -91,7 +91,11 @@ namespace ParkingSystem
             for (int i = 25; i < 50; i++)
             {
                 Button newButton = new Button();
+                newButton.Size = new Size(100, 38);
+                newButton.Font = new Font("微软雅黑", newButton.Font.Size,newButton.Font.Style);
                 newButton.Text = placerows[i]["placeid"].ToString();
+                
+                
                 if (placerows[i]["status"].ToString() == "0")
                 {
                     newButton.BackColor = Color.Green;
@@ -184,7 +188,7 @@ namespace ParkingSystem
         {
             this.dataGridView_records.Rows.Clear();
             Model_Records record;
-            if (this.comboBox_records.SelectedItem.ToString() == "" || this.textBox_records.Text == "")
+            if (this.comboBox_records.SelectedItem == null || this.textBox_records.Text == "")
             {
                 MessageBox.Show("查询方式有误，请重试！");
             }
@@ -194,13 +198,22 @@ namespace ParkingSystem
                 if (record != null)
                 {
                     int index = this.dataGridView_records.Rows.Add();
+                    this.dataGridView_records.Rows[index].Cells["RecID"].Value = record.ReturnId();
                     this.dataGridView_records.Rows[index].Cells["mastername"].Value = record.ReturnMasterName();
                     this.dataGridView_records.Rows[index].Cells["contactway"].Value = record.ReturnMasterContactWay();
                     this.dataGridView_records.Rows[index].Cells["placeid"].Value = record.ReturnPlaceid();
                     this.dataGridView_records.Rows[index].Cells["carnumbers"].Value = record.ReturnCarNumbers();
                     this.dataGridView_records.Rows[index].Cells["Entertime"].Value = record.ReturnEntertime();
                     this.dataGridView_records.Rows[index].Cells["leavetime"].Value = record.ReturnOutertime();
-                    TimeSpan timespan = DateTime.Now - Convert.ToDateTime(record.ReturnEntertime());
+                    TimeSpan timespan;
+                    if(record.ReturnOutertime() == null)
+                    {
+                        timespan = DateTime.Now - Convert.ToDateTime(record.ReturnEntertime());
+                    }
+                    else
+                    {
+                        timespan = Convert.ToDateTime(record.ReturnOutertime()) - Convert.ToDateTime(record.ReturnEntertime());
+                    }
                     this.dataGridView_records.Rows[index].Cells["allstaytime"].Value = string.Format("{0}天{1}小时{2}分钟", timespan.Days, timespan.Hours, timespan.Minutes);
                     this.dataGridView_records.Rows[index].Cells["money"].Value = record.ReturnMoney();
 
@@ -221,7 +234,7 @@ namespace ParkingSystem
 
             //清除数据
             this.dataGridView_freecars.Rows.Clear();
-            if (this.comboBox_freecar.SelectedItem.ToString() == "" || this.textBox_freecar.Text == "")
+            if (this.comboBox_freecar.SelectedItem==null || this.textBox_freecar.Text == "")
             {
                 MessageBox.Show("查询方式有误，请重试！");
             }
@@ -282,13 +295,22 @@ namespace ParkingSystem
             for (int i = 0; i < rows.Count; i++)
             {
                 int index = this.dataGridView_records.Rows.Add();
+                this.dataGridView_records.Rows[index].Cells["RecID"].Value = rows[i]["id"];
                 this.dataGridView_records.Rows[index].Cells["mastername"].Value = rows[i]["name"];
                 this.dataGridView_records.Rows[index].Cells["carnumbers"].Value = rows[i]["carnumbers"];
                 this.dataGridView_records.Rows[index].Cells["contactway"].Value = rows[i]["contactway"];
                 this.dataGridView_records.Rows[index].Cells["placeid"].Value = rows[i]["placeid"];
                 this.dataGridView_records.Rows[index].Cells["Entertime"].Value = rows[i]["entertime"];
                 this.dataGridView_records.Rows[index].Cells["leavetime"].Value = rows[i]["outtime"];
-                TimeSpan timespan = DateTime.Now - Convert.ToDateTime(rows[i]["entertime"]);
+                TimeSpan timespan;
+                if (rows[i]["outtime"] is DBNull)
+                {
+                    timespan = DateTime.Now - Convert.ToDateTime(rows[i]["entertime"].ToString());
+                }
+                else
+                {
+                    timespan = Convert.ToDateTime(rows[i]["outtime"].ToString()) - Convert.ToDateTime(rows[i]["entertime"].ToString());
+                }
                 this.dataGridView_records.Rows[index].Cells["allstaytime"].Value = string.Format("{0}天{1}小时{2}分钟", timespan.Days, timespan.Hours, timespan.Minutes);
                 this.dataGridView_records.Rows[index].Cells["money"].Value = rows[i]["money"];
 
@@ -303,6 +325,8 @@ namespace ParkingSystem
             for (int i = 0; i < 25; i++)
             {
                 Button newButton = new Button();
+                newButton.Size = new Size(100, 38);
+                newButton.Font = new Font("微软雅黑", newButton.Font.Size, newButton.Font.Style);
                 newButton.Text = placerows[i]["placeid"].ToString();
                 if (placerows[i]["status"].ToString() == "0")
                 {
@@ -333,14 +357,13 @@ namespace ParkingSystem
         {
             this.flowLayoutPanel_free.Controls.Clear();
             LoadButtons();
-            LoadStaticButtons();
         }
 
         private void Button_Staticcar_Search_Click(object sender, EventArgs e)
         {
             //清除数据
             this.datagridview_staticcars.Rows.Clear();
-            if (this.combox_staticcar.SelectedItem.ToString() == "" || this.textBox_static_search.Text == "")
+            if (this.combox_staticcar.SelectedItem == null || this.textBox_static_search.Text == "")
             {
                 MessageBox.Show("查询方式有误，请重试！");
             }
@@ -417,9 +440,7 @@ namespace ParkingSystem
                 , this.datagridview_staticcars.CurrentRow.Cells["staticcarnumbers"].Value.ToString()
                 , this.datagridview_staticcars.CurrentRow.Cells["staticname"].Value.ToString()
                 , this.datagridview_staticcars.CurrentRow.Cells["statictel"].Value.ToString()
-                , Convert.ToDateTime(this.datagridview_staticcars.CurrentRow.Cells["staticentertime"].Value.ToString())  
-                                        );
-
+                , Convert.ToDateTime(this.datagridview_staticcars.CurrentRow.Cells["staticentertime"].Value.ToString()));
             }
        
             StaticCarInormation swindow = new StaticCarInormation();
@@ -442,11 +463,6 @@ namespace ParkingSystem
         {
 
 
-        }
-
-    
-
-
-
+        }       
     }
 }

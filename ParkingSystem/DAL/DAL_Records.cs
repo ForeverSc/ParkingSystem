@@ -160,9 +160,9 @@ namespace ParkingSystem.DAL
         public void InsertRecord(Model_Records record)
         {
             string sql = string.Format("INSERT INTO "
-                                         + "records (id,placeid,name,carnumbers,contactway,entertime) "
-                                         + " VALUES('{0}','{1}','{2}','{3}','{4}','{5}')"
-                                         , record.ReturnId(),record.ReturnPlaceid(),record.ReturnMasterName(),record.ReturnCarNumbers(),record.ReturnMasterContactWay(),record.ReturnEntertime().ToString());
+                                         + "records (placeid,name,carnumbers,contactway,entertime) "
+                                         + " VALUES('{0}','{1}','{2}','{3}','{4}')"
+                                         ,record.ReturnPlaceid(),record.ReturnMasterName(),record.ReturnCarNumbers(),record.ReturnMasterContactWay(),record.ReturnEntertime().ToString());
             conn.DBcmd(sql);
         }
 

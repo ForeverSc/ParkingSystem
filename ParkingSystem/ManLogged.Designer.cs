@@ -47,14 +47,6 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.Button_Check_AllRecords = new System.Windows.Forms.Button();
             this.dataGridView_records = new System.Windows.Forms.DataGridView();
-            this.carnumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.placeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mastername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactway = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Entertime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leavetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allstaytime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox_records = new System.Windows.Forms.ComboBox();
@@ -101,13 +93,26 @@
             this.staticentertime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staticmoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label_leftplace = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel_static = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel_free = new System.Windows.Forms.FlowLayoutPanel();
-            this.label16 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.RecID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.placeid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carnumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mastername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactway = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Entertime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leavetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allstaytime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage5.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -121,7 +126,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_staticcars)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -142,7 +147,7 @@
             // 
             // button_admin_quit
             // 
-            this.button_admin_quit.Location = new System.Drawing.Point(548, 301);
+            this.button_admin_quit.Location = new System.Drawing.Point(754, 428);
             this.button_admin_quit.Name = "button_admin_quit";
             this.button_admin_quit.Size = new System.Drawing.Size(75, 23);
             this.button_admin_quit.TabIndex = 3;
@@ -152,7 +157,7 @@
             // 
             // button_admin_savemodify
             // 
-            this.button_admin_savemodify.Location = new System.Drawing.Point(440, 301);
+            this.button_admin_savemodify.Location = new System.Drawing.Point(646, 428);
             this.button_admin_savemodify.Name = "button_admin_savemodify";
             this.button_admin_savemodify.Size = new System.Drawing.Size(75, 23);
             this.button_admin_savemodify.TabIndex = 2;
@@ -162,7 +167,7 @@
             // 
             // button_admin_modifyinformation
             // 
-            this.button_admin_modifyinformation.Location = new System.Drawing.Point(329, 301);
+            this.button_admin_modifyinformation.Location = new System.Drawing.Point(535, 428);
             this.button_admin_modifyinformation.Name = "button_admin_modifyinformation";
             this.button_admin_modifyinformation.Size = new System.Drawing.Size(75, 23);
             this.button_admin_modifyinformation.TabIndex = 1;
@@ -184,26 +189,26 @@
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.text_admin_name);
             this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Location = new System.Drawing.Point(35, 28);
+            this.groupBox5.Location = new System.Drawing.Point(65, 35);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(588, 230);
+            this.groupBox5.Size = new System.Drawing.Size(774, 333);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "管理员个人信息";
             // 
             // text_admin_password2
             // 
-            this.text_admin_password2.Location = new System.Drawing.Point(365, 143);
+            this.text_admin_password2.Location = new System.Drawing.Point(513, 184);
             this.text_admin_password2.Name = "text_admin_password2";
             this.text_admin_password2.ReadOnly = true;
-            this.text_admin_password2.Size = new System.Drawing.Size(159, 21);
+            this.text_admin_password2.Size = new System.Drawing.Size(182, 21);
             this.text_admin_password2.TabIndex = 11;
             this.text_admin_password2.UseSystemPasswordChar = true;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(292, 143);
+            this.label14.Location = new System.Drawing.Point(442, 187);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 12);
             this.label14.TabIndex = 10;
@@ -212,17 +217,17 @@
             // 
             // text_admin_password
             // 
-            this.text_admin_password.Location = new System.Drawing.Point(365, 89);
+            this.text_admin_password.Location = new System.Drawing.Point(513, 116);
             this.text_admin_password.Name = "text_admin_password";
             this.text_admin_password.ReadOnly = true;
-            this.text_admin_password.Size = new System.Drawing.Size(159, 21);
+            this.text_admin_password.Size = new System.Drawing.Size(182, 21);
             this.text_admin_password.TabIndex = 9;
             this.text_admin_password.UseSystemPasswordChar = true;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(294, 92);
+            this.label13.Location = new System.Drawing.Point(442, 122);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(29, 12);
             this.label13.TabIndex = 8;
@@ -230,16 +235,16 @@
             // 
             // text_admin_idnumbers
             // 
-            this.text_admin_idnumbers.Location = new System.Drawing.Point(365, 40);
+            this.text_admin_idnumbers.Location = new System.Drawing.Point(513, 52);
             this.text_admin_idnumbers.Name = "text_admin_idnumbers";
             this.text_admin_idnumbers.ReadOnly = true;
-            this.text_admin_idnumbers.Size = new System.Drawing.Size(159, 21);
+            this.text_admin_idnumbers.Size = new System.Drawing.Size(182, 21);
             this.text_admin_idnumbers.TabIndex = 7;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(294, 40);
+            this.label12.Location = new System.Drawing.Point(442, 52);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 12);
             this.label12.TabIndex = 6;
@@ -247,16 +252,16 @@
             // 
             // text_admin_tel
             // 
-            this.text_admin_tel.Location = new System.Drawing.Point(86, 134);
+            this.text_admin_tel.Location = new System.Drawing.Point(108, 184);
             this.text_admin_tel.Name = "text_admin_tel";
             this.text_admin_tel.ReadOnly = true;
-            this.text_admin_tel.Size = new System.Drawing.Size(139, 21);
+            this.text_admin_tel.Size = new System.Drawing.Size(188, 21);
             this.text_admin_tel.TabIndex = 5;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(21, 134);
+            this.label11.Location = new System.Drawing.Point(43, 184);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(29, 12);
             this.label11.TabIndex = 4;
@@ -264,16 +269,16 @@
             // 
             // text_admin_age
             // 
-            this.text_admin_age.Location = new System.Drawing.Point(86, 89);
+            this.text_admin_age.Location = new System.Drawing.Point(108, 119);
             this.text_admin_age.Name = "text_admin_age";
             this.text_admin_age.ReadOnly = true;
-            this.text_admin_age.Size = new System.Drawing.Size(139, 21);
+            this.text_admin_age.Size = new System.Drawing.Size(188, 21);
             this.text_admin_age.TabIndex = 3;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(21, 89);
+            this.label10.Location = new System.Drawing.Point(43, 122);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 2;
@@ -281,16 +286,16 @@
             // 
             // text_admin_name
             // 
-            this.text_admin_name.Location = new System.Drawing.Point(86, 40);
+            this.text_admin_name.Location = new System.Drawing.Point(108, 52);
             this.text_admin_name.Name = "text_admin_name";
             this.text_admin_name.ReadOnly = true;
-            this.text_admin_name.Size = new System.Drawing.Size(139, 21);
+            this.text_admin_name.Size = new System.Drawing.Size(188, 21);
             this.text_admin_name.TabIndex = 1;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 40);
+            this.label9.Location = new System.Drawing.Point(43, 55);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 0;
@@ -316,7 +321,7 @@
             // 
             // Button_Check_AllRecords
             // 
-            this.Button_Check_AllRecords.Location = new System.Drawing.Point(638, 48);
+            this.Button_Check_AllRecords.Location = new System.Drawing.Point(749, 49);
             this.Button_Check_AllRecords.Name = "Button_Check_AllRecords";
             this.Button_Check_AllRecords.Size = new System.Drawing.Size(75, 23);
             this.Button_Check_AllRecords.TabIndex = 20;
@@ -331,8 +336,9 @@
             this.dataGridView_records.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView_records.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_records.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.carnumbers,
+            this.RecID,
             this.placeid,
+            this.carnumbers,
             this.mastername,
             this.contactway,
             this.Entertime,
@@ -347,58 +353,10 @@
             this.dataGridView_records.TabIndex = 19;
             this.dataGridView_records.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_records_CellDoubleClick);
             // 
-            // carnumbers
-            // 
-            this.carnumbers.HeaderText = "车牌号";
-            this.carnumbers.Name = "carnumbers";
-            this.carnumbers.ReadOnly = true;
-            // 
-            // placeid
-            // 
-            this.placeid.HeaderText = "车位号";
-            this.placeid.Name = "placeid";
-            this.placeid.ReadOnly = true;
-            // 
-            // mastername
-            // 
-            this.mastername.HeaderText = "车主姓名";
-            this.mastername.Name = "mastername";
-            this.mastername.ReadOnly = true;
-            // 
-            // contactway
-            // 
-            this.contactway.HeaderText = "联系电话";
-            this.contactway.Name = "contactway";
-            this.contactway.ReadOnly = true;
-            // 
-            // Entertime
-            // 
-            this.Entertime.HeaderText = "进入时间";
-            this.Entertime.Name = "Entertime";
-            this.Entertime.ReadOnly = true;
-            // 
-            // leavetime
-            // 
-            this.leavetime.HeaderText = "离开时间";
-            this.leavetime.Name = "leavetime";
-            this.leavetime.ReadOnly = true;
-            // 
-            // allstaytime
-            // 
-            this.allstaytime.HeaderText = "停车总时长";
-            this.allstaytime.Name = "allstaytime";
-            this.allstaytime.ReadOnly = true;
-            // 
-            // money
-            // 
-            this.money.HeaderText = "实收费用";
-            this.money.Name = "money";
-            this.money.ReadOnly = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(301, 55);
+            this.label6.Location = new System.Drawing.Point(321, 55);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 12);
             this.label6.TabIndex = 18;
@@ -428,7 +386,7 @@
             // 
             // Button_records_search
             // 
-            this.Button_records_search.Location = new System.Drawing.Point(535, 48);
+            this.Button_records_search.Location = new System.Drawing.Point(619, 49);
             this.Button_records_search.Name = "Button_records_search";
             this.Button_records_search.Size = new System.Drawing.Size(75, 23);
             this.Button_records_search.TabIndex = 15;
@@ -438,7 +396,7 @@
             // 
             // textBox_records
             // 
-            this.textBox_records.Location = new System.Drawing.Point(344, 51);
+            this.textBox_records.Location = new System.Drawing.Point(364, 51);
             this.textBox_records.Name = "textBox_records";
             this.textBox_records.Size = new System.Drawing.Size(145, 21);
             this.textBox_records.TabIndex = 14;
@@ -473,16 +431,16 @@
             this.groupBox4.Controls.Add(this.Button_Freecar_Search);
             this.groupBox4.Controls.Add(this.textBox_freecar);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(252, 16);
+            this.groupBox4.Location = new System.Drawing.Point(285, 7);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(462, 100);
+            this.groupBox4.Size = new System.Drawing.Size(430, 100);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "信息查询";
             // 
             // Button_checkall_freecars
             // 
-            this.Button_checkall_freecars.Location = new System.Drawing.Point(267, 71);
+            this.Button_checkall_freecars.Location = new System.Drawing.Point(247, 59);
             this.Button_checkall_freecars.Name = "Button_checkall_freecars";
             this.Button_checkall_freecars.Size = new System.Drawing.Size(75, 23);
             this.Button_checkall_freecars.TabIndex = 19;
@@ -493,7 +451,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(250, 23);
+            this.label4.Location = new System.Drawing.Point(230, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 12);
             this.label4.TabIndex = 18;
@@ -502,7 +460,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 23);
+            this.label5.Location = new System.Drawing.Point(9, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 12);
             this.label5.TabIndex = 17;
@@ -516,14 +474,14 @@
             "车牌号",
             "车位号",
             "车主姓名"});
-            this.comboBox_freecar.Location = new System.Drawing.Point(96, 20);
+            this.comboBox_freecar.Location = new System.Drawing.Point(76, 20);
             this.comboBox_freecar.Name = "comboBox_freecar";
             this.comboBox_freecar.Size = new System.Drawing.Size(121, 20);
             this.comboBox_freecar.TabIndex = 16;
             // 
             // Button_Freecar_Search
             // 
-            this.Button_Freecar_Search.Location = new System.Drawing.Point(363, 71);
+            this.Button_Freecar_Search.Location = new System.Drawing.Point(343, 59);
             this.Button_Freecar_Search.Name = "Button_Freecar_Search";
             this.Button_Freecar_Search.Size = new System.Drawing.Size(75, 23);
             this.Button_Freecar_Search.TabIndex = 15;
@@ -533,7 +491,7 @@
             // 
             // textBox_freecar
             // 
-            this.textBox_freecar.Location = new System.Drawing.Point(293, 19);
+            this.textBox_freecar.Location = new System.Drawing.Point(273, 19);
             this.textBox_freecar.Name = "textBox_freecar";
             this.textBox_freecar.Size = new System.Drawing.Size(145, 21);
             this.textBox_freecar.TabIndex = 14;
@@ -550,7 +508,7 @@
             // 
             this.groupBox3.Controls.Add(this.Button_Freecar_Leave);
             this.groupBox3.Controls.Add(this.Button_Freecar_Enter);
-            this.groupBox3.Location = new System.Drawing.Point(9, 16);
+            this.groupBox3.Location = new System.Drawing.Point(9, 7);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(206, 100);
             this.groupBox3.TabIndex = 6;
@@ -559,9 +517,9 @@
             // 
             // Button_Freecar_Leave
             // 
-            this.Button_Freecar_Leave.Location = new System.Drawing.Point(109, 33);
+            this.Button_Freecar_Leave.Location = new System.Drawing.Point(109, 23);
             this.Button_Freecar_Leave.Name = "Button_Freecar_Leave";
-            this.Button_Freecar_Leave.Size = new System.Drawing.Size(75, 45);
+            this.Button_Freecar_Leave.Size = new System.Drawing.Size(85, 56);
             this.Button_Freecar_Leave.TabIndex = 1;
             this.Button_Freecar_Leave.Text = "自由车离开";
             this.Button_Freecar_Leave.UseVisualStyleBackColor = true;
@@ -569,9 +527,9 @@
             // 
             // Button_Freecar_Enter
             // 
-            this.Button_Freecar_Enter.Location = new System.Drawing.Point(6, 33);
+            this.Button_Freecar_Enter.Location = new System.Drawing.Point(7, 23);
             this.Button_Freecar_Enter.Name = "Button_Freecar_Enter";
-            this.Button_Freecar_Enter.Size = new System.Drawing.Size(75, 45);
+            this.Button_Freecar_Enter.Size = new System.Drawing.Size(85, 56);
             this.Button_Freecar_Enter.TabIndex = 0;
             this.Button_Freecar_Enter.Text = "自由车进入";
             this.Button_Freecar_Enter.UseVisualStyleBackColor = true;
@@ -660,16 +618,16 @@
             this.groupBox2.Controls.Add(this.combox_staticcar);
             this.groupBox2.Controls.Add(this.Button_Staticcar_Search);
             this.groupBox2.Controls.Add(this.textBox_static_search);
-            this.groupBox2.Location = new System.Drawing.Point(399, 7);
+            this.groupBox2.Location = new System.Drawing.Point(362, 7);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(432, 99);
+            this.groupBox2.Size = new System.Drawing.Size(432, 100);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "信息查询";
             // 
             // Button_allstaticcars
             // 
-            this.Button_allstaticcars.Location = new System.Drawing.Point(228, 70);
+            this.Button_allstaticcars.Location = new System.Drawing.Point(239, 59);
             this.Button_allstaticcars.Name = "Button_allstaticcars";
             this.Button_allstaticcars.Size = new System.Drawing.Size(75, 23);
             this.Button_allstaticcars.TabIndex = 13;
@@ -710,7 +668,7 @@
             // 
             // Button_Staticcar_Search
             // 
-            this.Button_Staticcar_Search.Location = new System.Drawing.Point(328, 70);
+            this.Button_Staticcar_Search.Location = new System.Drawing.Point(339, 59);
             this.Button_Staticcar_Search.Name = "Button_Staticcar_Search";
             this.Button_Staticcar_Search.Size = new System.Drawing.Size(75, 23);
             this.Button_Staticcar_Search.TabIndex = 9;
@@ -732,7 +690,7 @@
             this.groupBox1.Controls.Add(this.Button_StaticCar_Enter);
             this.groupBox1.Location = new System.Drawing.Point(9, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(333, 93);
+            this.groupBox1.Size = new System.Drawing.Size(307, 100);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "进出管理";
@@ -741,7 +699,7 @@
             // 
             this.button_addnewstaticcar.Location = new System.Drawing.Point(212, 23);
             this.button_addnewstaticcar.Name = "button_addnewstaticcar";
-            this.button_addnewstaticcar.Size = new System.Drawing.Size(91, 56);
+            this.button_addnewstaticcar.Size = new System.Drawing.Size(85, 56);
             this.button_addnewstaticcar.TabIndex = 2;
             this.button_addnewstaticcar.Text = "新建固定车";
             this.button_addnewstaticcar.UseVisualStyleBackColor = true;
@@ -761,7 +719,7 @@
             // 
             this.Button_StaticCar_Enter.Location = new System.Drawing.Point(7, 23);
             this.Button_StaticCar_Enter.Name = "Button_StaticCar_Enter";
-            this.Button_StaticCar_Enter.Size = new System.Drawing.Size(82, 56);
+            this.Button_StaticCar_Enter.Size = new System.Drawing.Size(85, 56);
             this.Button_StaticCar_Enter.TabIndex = 0;
             this.Button_StaticCar_Enter.Text = "固定车进入";
             this.Button_StaticCar_Enter.UseVisualStyleBackColor = true;
@@ -836,10 +794,14 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label_leftplace);
+            this.tabPage1.Controls.Add(this.label18);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.groupBox8);
+            this.tabPage1.Controls.Add(this.flowLayoutPanel_static);
             this.tabPage1.Controls.Add(this.groupBox7);
             this.tabPage1.Controls.Add(this.groupBox6);
-            this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -848,63 +810,112 @@
             this.tabPage1.Text = "当前状态";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(716, 408);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 12);
+            this.label18.TabIndex = 12;
+            this.label18.Text = "未被使用";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(716, 365);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 12);
+            this.label17.TabIndex = 11;
+            this.label17.Text = "已被使用";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Green;
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label16.Location = new System.Drawing.Point(694, 408);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(11, 12);
+            this.label16.TabIndex = 10;
+            this.label16.Text = " ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Red;
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label15.Location = new System.Drawing.Point(694, 365);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(11, 12);
+            this.label15.TabIndex = 9;
+            this.label15.Text = " ";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.label_leftplace);
+            this.groupBox8.Location = new System.Drawing.Point(632, 21);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(243, 163);
+            this.groupBox8.TabIndex = 8;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "剩余空位";
+            // 
             // label_leftplace
             // 
+            this.label_leftplace.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label_leftplace.AutoSize = true;
-            this.label_leftplace.Location = new System.Drawing.Point(764, 59);
+            this.label_leftplace.Font = new System.Drawing.Font("微软雅黑", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_leftplace.Location = new System.Drawing.Point(78, 46);
             this.label_leftplace.Name = "label_leftplace";
-            this.label_leftplace.Size = new System.Drawing.Size(47, 12);
+            this.label_leftplace.Size = new System.Drawing.Size(95, 75);
             this.label_leftplace.TabIndex = 7;
-            this.label_leftplace.Text = "label15";
+            this.label_leftplace.Text = "ID";
             this.label_leftplace.Click += new System.EventHandler(this.label_leftplace_Click);
+            // 
+            // flowLayoutPanel_static
+            // 
+            this.flowLayoutPanel_static.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel_static.Location = new System.Drawing.Point(34, 283);
+            this.flowLayoutPanel_static.Name = "flowLayoutPanel_static";
+            this.flowLayoutPanel_static.Size = new System.Drawing.Size(532, 220);
+            this.flowLayoutPanel_static.TabIndex = 0;
             // 
             // groupBox7
             // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox7.Controls.Add(this.flowLayoutPanel_static);
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Location = new System.Drawing.Point(32, 270);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(544, 256);
+            this.groupBox7.Size = new System.Drawing.Size(540, 240);
             this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "固定车位";
             // 
-            // flowLayoutPanel_static
-            // 
-            this.flowLayoutPanel_static.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel_static.Location = new System.Drawing.Point(3, 17);
-            this.flowLayoutPanel_static.Name = "flowLayoutPanel_static";
-            this.flowLayoutPanel_static.Size = new System.Drawing.Size(538, 236);
-            this.flowLayoutPanel_static.TabIndex = 0;
-            // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.flowLayoutPanel_free);
-            this.groupBox6.Location = new System.Drawing.Point(32, 28);
+            this.groupBox6.Location = new System.Drawing.Point(32, 21);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(544, 225);
+            this.groupBox6.Size = new System.Drawing.Size(540, 240);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "自由车位";
             // 
             // flowLayoutPanel_free
             // 
-            this.flowLayoutPanel_free.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel_free.Location = new System.Drawing.Point(3, 17);
+            this.flowLayoutPanel_free.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel_free.Location = new System.Drawing.Point(3, 13);
             this.flowLayoutPanel_free.Name = "flowLayoutPanel_free";
-            this.flowLayoutPanel_free.Size = new System.Drawing.Size(538, 205);
+            this.flowLayoutPanel_free.Size = new System.Drawing.Size(531, 220);
             this.flowLayoutPanel_free.TabIndex = 0;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(690, 59);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(53, 12);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "剩余空位";
             // 
             // tabControl1
             // 
@@ -923,11 +934,71 @@
             this.tabControl1.Size = new System.Drawing.Size(908, 570);
             this.tabControl1.TabIndex = 0;
             // 
+            // RecID
+            // 
+            this.RecID.HeaderText = "ID";
+            this.RecID.Name = "RecID";
+            this.RecID.ReadOnly = true;
+            this.RecID.Width = 30;
+            // 
+            // placeid
+            // 
+            this.placeid.HeaderText = "车位号";
+            this.placeid.Name = "placeid";
+            this.placeid.ReadOnly = true;
+            this.placeid.Width = 80;
+            // 
+            // carnumbers
+            // 
+            this.carnumbers.HeaderText = "车牌号";
+            this.carnumbers.Name = "carnumbers";
+            this.carnumbers.ReadOnly = true;
+            // 
+            // mastername
+            // 
+            this.mastername.HeaderText = "车主姓名";
+            this.mastername.Name = "mastername";
+            this.mastername.ReadOnly = true;
+            // 
+            // contactway
+            // 
+            this.contactway.HeaderText = "联系电话";
+            this.contactway.Name = "contactway";
+            this.contactway.ReadOnly = true;
+            // 
+            // Entertime
+            // 
+            this.Entertime.HeaderText = "进入时间";
+            this.Entertime.Name = "Entertime";
+            this.Entertime.ReadOnly = true;
+            this.Entertime.Width = 130;
+            // 
+            // leavetime
+            // 
+            this.leavetime.HeaderText = "离开时间";
+            this.leavetime.Name = "leavetime";
+            this.leavetime.ReadOnly = true;
+            this.leavetime.Width = 130;
+            // 
+            // allstaytime
+            // 
+            this.allstaytime.HeaderText = "停车总时长";
+            this.allstaytime.Name = "allstaytime";
+            this.allstaytime.ReadOnly = true;
+            // 
+            // money
+            // 
+            this.money.HeaderText = "实收费用";
+            this.money.Name = "money";
+            this.money.ReadOnly = true;
+            // 
             // ManLogged
             // 
             this.ClientSize = new System.Drawing.Size(909, 572);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.Name = "ManLogged";
+            this.Text = "Parking Resource Management System";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ManLogged_FormClosed_1);
             this.Load += new System.EventHandler(this.ManLogged_Load);
             this.tabPage5.ResumeLayout(false);
@@ -948,7 +1019,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_staticcars)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1009,7 +1081,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button Button_checkall_freecars;
         private System.Windows.Forms.Button Button_Check_AllRecords;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridViewTextBoxColumn freecarnumbers;
         private System.Windows.Forms.DataGridViewTextBoxColumn freeplaceid;
         private System.Windows.Forms.DataGridViewTextBoxColumn freemastername;
@@ -1030,8 +1101,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn staticaddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn staticentertime;
         private System.Windows.Forms.DataGridViewTextBoxColumn staticmoney;
-        private System.Windows.Forms.DataGridViewTextBoxColumn carnumbers;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RecID;
         private System.Windows.Forms.DataGridViewTextBoxColumn placeid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carnumbers;
         private System.Windows.Forms.DataGridViewTextBoxColumn mastername;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactway;
         private System.Windows.Forms.DataGridViewTextBoxColumn Entertime;

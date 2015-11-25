@@ -32,10 +32,9 @@ namespace ParkingSystem
                 );
             if (BLL_StaticCars.ReturnExistStaticCar(car)==true)
             {
-                car = BLL_StaticCars.ReturnStaticCarByCarnumbers(this.textBox_carnumbers.Text);
+                BLL_ParkingStatus.SetPlaceidAvailable(car.ReturnPlaceid());
                 Model_Records record=BLL_Records.ReturnRecordByNumbersAndName(car.ReturnCarnumbers(),car.ReturnName());
                 record.SetOuttime(DateTime.Now);
-                BLL_ParkingStatus.SetPlaceidAvailable(car.ReturnPlaceid());
                 BLL_Records.FinishOneRecord(record);
                 this.Close();         
             }
@@ -74,10 +73,6 @@ namespace ParkingSystem
         private void StaticCarLeave_FormClosed(object sender, FormClosedEventArgs e)
         {
             ManLogged.RefreshFreeStatus();
-            this.textBox_carnumbers.Text = "";
-            this.textBox_contactway.Text = "";
-            this.textBox_name.Text = "";
-            this.textBox_placeid.Text = "";
         }
     }
 }

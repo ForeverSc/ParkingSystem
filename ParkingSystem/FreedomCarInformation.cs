@@ -63,7 +63,7 @@ namespace ParkingSystem
             f_placeid = this.text_placeid.Text;
             f_name = this.text_admin_name.Text;
             FreedomCarLeave freeleave = new FreedomCarLeave();
-            freeleave.ShowDialog();
+            freeleave.Show();
             this.Close();
             f_carnumbers = null;
             f_contactway = null;

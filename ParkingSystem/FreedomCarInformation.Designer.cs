@@ -203,7 +203,7 @@
             this.Controls.Add(this.Button_freecar_modify);
             this.Controls.Add(this.groupBox5);
             this.Name = "FreedomCarInformation";
-            this.Text = "FreedomCarInformation";
+            this.Text = "FreeCarInformation";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FreedomCarInformation_FormClosed);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();

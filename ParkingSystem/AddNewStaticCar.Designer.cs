@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox_name = new System.Windows.Forms.TextBox();
-            this.textBox_placeid = new System.Windows.Forms.TextBox();
-            this.textBox_carnumbers = new System.Windows.Forms.TextBox();
-            this.textBox_address = new System.Windows.Forms.TextBox();
             this.textBox_contactway = new System.Windows.Forms.TextBox();
+            this.textBox_address = new System.Windows.Forms.TextBox();
+            this.textBox_carnumbers = new System.Windows.Forms.TextBox();
+            this.textBox_placeid = new System.Windows.Forms.TextBox();
+            this.textBox_name = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button_add = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -58,95 +58,95 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(45, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(399, 353);
+            this.groupBox1.Size = new System.Drawing.Size(305, 283);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "登记固定车消息";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // textBox_contactway
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 54);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "车主姓名";
+            this.textBox_contactway.Location = new System.Drawing.Point(140, 193);
+            this.textBox_contactway.Name = "textBox_contactway";
+            this.textBox_contactway.Size = new System.Drawing.Size(100, 21);
+            this.textBox_contactway.TabIndex = 9;
             // 
-            // label2
+            // textBox_address
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "车位号";
+            this.textBox_address.Location = new System.Drawing.Point(140, 159);
+            this.textBox_address.Name = "textBox_address";
+            this.textBox_address.Size = new System.Drawing.Size(100, 21);
+            this.textBox_address.TabIndex = 8;
             // 
-            // label3
+            // textBox_carnumbers
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "车牌号";
+            this.textBox_carnumbers.Location = new System.Drawing.Point(140, 126);
+            this.textBox_carnumbers.Name = "textBox_carnumbers";
+            this.textBox_carnumbers.Size = new System.Drawing.Size(100, 21);
+            this.textBox_carnumbers.TabIndex = 7;
             // 
-            // label4
+            // textBox_placeid
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "住址";
+            this.textBox_placeid.Location = new System.Drawing.Point(140, 90);
+            this.textBox_placeid.Name = "textBox_placeid";
+            this.textBox_placeid.Size = new System.Drawing.Size(100, 21);
+            this.textBox_placeid.TabIndex = 6;
+            // 
+            // textBox_name
+            // 
+            this.textBox_name.Location = new System.Drawing.Point(140, 54);
+            this.textBox_name.Name = "textBox_name";
+            this.textBox_name.Size = new System.Drawing.Size(100, 21);
+            this.textBox_name.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(48, 193);
+            this.label5.Location = new System.Drawing.Point(64, 196);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 4;
             this.label5.Text = "联系电话";
             // 
-            // textBox_name
+            // label4
             // 
-            this.textBox_name.Location = new System.Drawing.Point(118, 54);
-            this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(100, 21);
-            this.textBox_name.TabIndex = 5;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(71, 162);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "住址";
             // 
-            // textBox_placeid
+            // label3
             // 
-            this.textBox_placeid.Location = new System.Drawing.Point(118, 90);
-            this.textBox_placeid.Name = "textBox_placeid";
-            this.textBox_placeid.Size = new System.Drawing.Size(100, 21);
-            this.textBox_placeid.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(66, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "车牌号";
             // 
-            // textBox_carnumbers
+            // label2
             // 
-            this.textBox_carnumbers.Location = new System.Drawing.Point(118, 126);
-            this.textBox_carnumbers.Name = "textBox_carnumbers";
-            this.textBox_carnumbers.Size = new System.Drawing.Size(100, 21);
-            this.textBox_carnumbers.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(66, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "车位号";
             // 
-            // textBox_address
+            // label1
             // 
-            this.textBox_address.Location = new System.Drawing.Point(118, 156);
-            this.textBox_address.Name = "textBox_address";
-            this.textBox_address.Size = new System.Drawing.Size(100, 21);
-            this.textBox_address.TabIndex = 8;
-            // 
-            // textBox_contactway
-            // 
-            this.textBox_contactway.Location = new System.Drawing.Point(118, 193);
-            this.textBox_contactway.Name = "textBox_contactway";
-            this.textBox_contactway.Size = new System.Drawing.Size(100, 21);
-            this.textBox_contactway.TabIndex = 9;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(64, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "车主姓名";
             // 
             // button_add
             // 
-            this.button_add.Location = new System.Drawing.Point(459, 452);
+            this.button_add.Location = new System.Drawing.Point(163, 361);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(75, 23);
             this.button_add.TabIndex = 1;
@@ -156,7 +156,7 @@
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(581, 452);
+            this.button_cancel.Location = new System.Drawing.Point(275, 361);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(75, 23);
             this.button_cancel.TabIndex = 2;
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 523);
+            this.ClientSize = new System.Drawing.Size(405, 425);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.groupBox1);

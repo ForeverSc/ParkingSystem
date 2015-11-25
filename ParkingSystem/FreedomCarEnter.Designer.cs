@@ -48,10 +48,9 @@ namespace ParkingSystem
             this.Button_enter_allow = new System.Windows.Forms.Button();
             this.Button_enter_ban = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label_leftplace = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Button_AutoGiven = new System.Windows.Forms.Button();
-            this.Button_Status = new System.Windows.Forms.Button();
-            this.label_leftplace = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +74,7 @@ namespace ParkingSystem
             // 
             // textBox_placeid
             // 
-            this.textBox_placeid.Location = new System.Drawing.Point(78, 126);
+            this.textBox_placeid.Location = new System.Drawing.Point(108, 201);
             this.textBox_placeid.Name = "textBox_placeid";
             this.textBox_placeid.ReadOnly = true;
             this.textBox_placeid.Size = new System.Drawing.Size(100, 21);
@@ -84,7 +83,7 @@ namespace ParkingSystem
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 129);
+            this.label4.Location = new System.Drawing.Point(49, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 6;
@@ -92,21 +91,21 @@ namespace ParkingSystem
             // 
             // textBox_carnumbers
             // 
-            this.textBox_carnumbers.Location = new System.Drawing.Point(78, 96);
+            this.textBox_carnumbers.Location = new System.Drawing.Point(108, 145);
             this.textBox_carnumbers.Name = "textBox_carnumbers";
             this.textBox_carnumbers.Size = new System.Drawing.Size(100, 21);
             this.textBox_carnumbers.TabIndex = 5;
             // 
             // textBox_tel
             // 
-            this.textBox_tel.Location = new System.Drawing.Point(78, 69);
+            this.textBox_tel.Location = new System.Drawing.Point(108, 94);
             this.textBox_tel.Name = "textBox_tel";
             this.textBox_tel.Size = new System.Drawing.Size(100, 21);
             this.textBox_tel.TabIndex = 4;
             // 
             // textBox_mastername
             // 
-            this.textBox_mastername.Location = new System.Drawing.Point(78, 41);
+            this.textBox_mastername.Location = new System.Drawing.Point(108, 41);
             this.textBox_mastername.Name = "textBox_mastername";
             this.textBox_mastername.Size = new System.Drawing.Size(100, 21);
             this.textBox_mastername.TabIndex = 3;
@@ -114,7 +113,7 @@ namespace ParkingSystem
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 99);
+            this.label3.Location = new System.Drawing.Point(54, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 2;
@@ -123,7 +122,7 @@ namespace ParkingSystem
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 69);
+            this.label2.Location = new System.Drawing.Point(59, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
@@ -132,7 +131,7 @@ namespace ParkingSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 41);
+            this.label1.Location = new System.Drawing.Point(49, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 0;
@@ -140,7 +139,7 @@ namespace ParkingSystem
             // 
             // Button_enter_allow
             // 
-            this.Button_enter_allow.Location = new System.Drawing.Point(403, 365);
+            this.Button_enter_allow.Location = new System.Drawing.Point(400, 339);
             this.Button_enter_allow.Name = "Button_enter_allow";
             this.Button_enter_allow.Size = new System.Drawing.Size(75, 23);
             this.Button_enter_allow.TabIndex = 1;
@@ -150,7 +149,7 @@ namespace ParkingSystem
             // 
             // Button_enter_ban
             // 
-            this.Button_enter_ban.Location = new System.Drawing.Point(510, 365);
+            this.Button_enter_ban.Location = new System.Drawing.Point(507, 339);
             this.Button_enter_ban.Name = "Button_enter_ban";
             this.Button_enter_ban.Size = new System.Drawing.Size(75, 23);
             this.Button_enter_ban.TabIndex = 2;
@@ -163,13 +162,22 @@ namespace ParkingSystem
             this.groupBox2.Controls.Add(this.label_leftplace);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.Button_AutoGiven);
-            this.groupBox2.Controls.Add(this.Button_Status);
             this.groupBox2.Location = new System.Drawing.Point(363, 13);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(242, 316);
+            this.groupBox2.Size = new System.Drawing.Size(242, 289);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "停车场状态";
+            // 
+            // label_leftplace
+            // 
+            this.label_leftplace.AutoSize = true;
+            this.label_leftplace.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_leftplace.Location = new System.Drawing.Point(89, 128);
+            this.label_leftplace.Name = "label_leftplace";
+            this.label_leftplace.Size = new System.Drawing.Size(65, 38);
+            this.label_leftplace.TabIndex = 3;
+            this.label_leftplace.Text = "NO";
             // 
             // label5
             // 
@@ -182,33 +190,13 @@ namespace ParkingSystem
             // 
             // Button_AutoGiven
             // 
-            this.Button_AutoGiven.Location = new System.Drawing.Point(16, 258);
+            this.Button_AutoGiven.Location = new System.Drawing.Point(16, 236);
             this.Button_AutoGiven.Name = "Button_AutoGiven";
             this.Button_AutoGiven.Size = new System.Drawing.Size(206, 23);
             this.Button_AutoGiven.TabIndex = 1;
             this.Button_AutoGiven.Text = "自动分配";
             this.Button_AutoGiven.UseVisualStyleBackColor = true;
             this.Button_AutoGiven.Click += new System.EventHandler(this.Button_AutoGiven_Click);
-            // 
-            // Button_Status
-            // 
-            this.Button_Status.Location = new System.Drawing.Point(16, 213);
-            this.Button_Status.Name = "Button_Status";
-            this.Button_Status.Size = new System.Drawing.Size(206, 23);
-            this.Button_Status.TabIndex = 0;
-            this.Button_Status.Text = "详细状况";
-            this.Button_Status.UseVisualStyleBackColor = true;
-            this.Button_Status.Click += new System.EventHandler(this.Button_Status_Click);
-            // 
-            // label_leftplace
-            // 
-            this.label_leftplace.AutoSize = true;
-            this.label_leftplace.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_leftplace.Location = new System.Drawing.Point(67, 79);
-            this.label_leftplace.Name = "label_leftplace";
-            this.label_leftplace.Size = new System.Drawing.Size(101, 38);
-            this.label_leftplace.TabIndex = 3;
-            this.label_leftplace.Text = "label6";
             // 
             // FreedomCarEnter
             // 
@@ -220,7 +208,7 @@ namespace ParkingSystem
             this.Controls.Add(this.Button_enter_allow);
             this.Controls.Add(this.groupBox1);
             this.Name = "FreedomCarEnter";
-            this.Text = "ParkingSystem";
+            this.Text = "FreeCarEnter";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FreedomCarEnter_FormClosed);
             this.Load += new System.EventHandler(this.FreedomCarEnter_Load);
             this.groupBox1.ResumeLayout(false);
@@ -244,7 +232,6 @@ namespace ParkingSystem
         private System.Windows.Forms.Button Button_enter_ban;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button Button_AutoGiven;
-        private System.Windows.Forms.Button Button_Status;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_leftplace;
 	}

@@ -79,7 +79,7 @@
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(17, 245);
+            this.label.Location = new System.Drawing.Point(22, 233);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(101, 12);
             this.label.TabIndex = 10;
@@ -87,28 +87,28 @@
             // 
             // textBox_hoursmoney
             // 
-            this.textBox_hoursmoney.Location = new System.Drawing.Point(129, 242);
+            this.textBox_hoursmoney.Location = new System.Drawing.Point(129, 230);
             this.textBox_hoursmoney.Name = "textBox_hoursmoney";
             this.textBox_hoursmoney.Size = new System.Drawing.Size(100, 21);
             this.textBox_hoursmoney.TabIndex = 9;
             // 
             // textBox_contactway
             // 
-            this.textBox_contactway.Location = new System.Drawing.Point(129, 174);
+            this.textBox_contactway.Location = new System.Drawing.Point(129, 185);
             this.textBox_contactway.Name = "textBox_contactway";
             this.textBox_contactway.Size = new System.Drawing.Size(100, 21);
             this.textBox_contactway.TabIndex = 7;
             // 
             // textBox_mastername
             // 
-            this.textBox_mastername.Location = new System.Drawing.Point(129, 139);
+            this.textBox_mastername.Location = new System.Drawing.Point(129, 140);
             this.textBox_mastername.Name = "textBox_mastername";
             this.textBox_mastername.Size = new System.Drawing.Size(100, 21);
             this.textBox_mastername.TabIndex = 6;
             // 
             // textBox_carnumbers
             // 
-            this.textBox_carnumbers.Location = new System.Drawing.Point(129, 96);
+            this.textBox_carnumbers.Location = new System.Drawing.Point(129, 97);
             this.textBox_carnumbers.Name = "textBox_carnumbers";
             this.textBox_carnumbers.Size = new System.Drawing.Size(100, 21);
             this.textBox_carnumbers.TabIndex = 5;
@@ -123,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 174);
+            this.label4.Location = new System.Drawing.Point(44, 188);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 3;
@@ -132,7 +132,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 139);
+            this.label3.Location = new System.Drawing.Point(44, 143);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 2;
@@ -141,7 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 96);
+            this.label2.Location = new System.Drawing.Point(51, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 1;
@@ -200,7 +200,7 @@
             // label_hoursmoney
             // 
             this.label_hoursmoney.AutoSize = true;
-            this.label_hoursmoney.Location = new System.Drawing.Point(108, 188);
+            this.label_hoursmoney.Location = new System.Drawing.Point(113, 180);
             this.label_hoursmoney.Name = "label_hoursmoney";
             this.label_hoursmoney.Size = new System.Drawing.Size(41, 12);
             this.label_hoursmoney.TabIndex = 9;
@@ -209,7 +209,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(29, 188);
+            this.label11.Location = new System.Drawing.Point(25, 180);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(71, 12);
             this.label11.TabIndex = 8;
@@ -218,16 +218,17 @@
             // label_moneycost
             // 
             this.label_moneycost.AutoSize = true;
-            this.label_moneycost.Location = new System.Drawing.Point(113, 223);
+            this.label_moneycost.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_moneycost.Location = new System.Drawing.Point(160, 258);
             this.label_moneycost.Name = "label_moneycost";
-            this.label_moneycost.Size = new System.Drawing.Size(47, 12);
+            this.label_moneycost.Size = new System.Drawing.Size(60, 19);
             this.label_moneycost.TabIndex = 7;
             this.label_moneycost.Text = "label11";
             // 
             // label_timecost
             // 
             this.label_timecost.AutoSize = true;
-            this.label_timecost.Location = new System.Drawing.Point(113, 143);
+            this.label_timecost.Location = new System.Drawing.Point(113, 138);
             this.label_timecost.Name = "label_timecost";
             this.label_timecost.Size = new System.Drawing.Size(47, 12);
             this.label_timecost.TabIndex = 6;
@@ -245,7 +246,7 @@
             // label_entertime
             // 
             this.label_entertime.AutoSize = true;
-            this.label_entertime.Location = new System.Drawing.Point(111, 50);
+            this.label_entertime.Location = new System.Drawing.Point(113, 50);
             this.label_entertime.Name = "label_entertime";
             this.label_entertime.Size = new System.Drawing.Size(41, 12);
             this.label_entertime.TabIndex = 4;
@@ -254,16 +255,17 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 223);
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(61, 258);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 12);
+            this.label8.Size = new System.Drawing.Size(93, 19);
             this.label8.TabIndex = 3;
             this.label8.Text = "总收费金额：";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 143);
+            this.label7.Location = new System.Drawing.Point(25, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 12);
             this.label7.TabIndex = 2;
@@ -308,7 +310,7 @@
             this.Controls.Add(this.Button_Allow_Leave);
             this.Controls.Add(this.groupBox1);
             this.Name = "FreedomCarLeave";
-            this.Text = "FreedomCarLeave";
+            this.Text = "FreeCarLeave";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FreedomCarLeave_FormClosed);
             this.Load += new System.EventHandler(this.FreedomCarLeave_Load);
             this.groupBox1.ResumeLayout(false);
